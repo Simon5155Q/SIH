@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#00174b", "inverse-surface": "#213145", "on-surface-variant": "#43474d", "on-primary-container": "#7991af", "primary": "#001428", "on-error-container": "#93000a", "tertiary-fixed-dim": "#b4c5ff", "secondary-fixed-dim": "#ffb599", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "surface-container-highest": "#d3e4fe", "on-primary-fixed-variant": "#314863", "on-tertiary": "#ffffff", "surface-tint": "#49607c", "on-secondary-container": "#571a00", "on-secondary": "#ffffff", "primary-container": "#0f2942", "outline": "#74777e", "primary-fixed-dim": "#b0c9e8", "on-surface": "#0b1c30", "on-primary-fixed": "#011d35", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#7f2b00", "inverse-primary": "#b0c9e8", "surface-dim": "#cbdbf5", "on-background": "#0b1c30", "secondary": "#a73a00", "outline-variant": "#c3c6ce", "surface-container-high": "#dce9ff", "secondary-fixed": "#ffdbce", "on-error": "#ffffff", "surface-variant": "#d3e4fe", "on-tertiary-fixed-variant": "#003ea8", "tertiary-container": "#002265", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-bright": "#f8f9ff", "primary-fixed": "#d1e4ff", "inverse-on-surface": "#eaf1ff", "secondary-container": "#fd651e", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "on-secondary-fixed": "#370e00", "error-container": "#ffdad6", "on-tertiary-container": "#5d88ff", "tertiary": "#001039" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "container-max": "1280px", "space-2xl": "3rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "space-3xl": "4rem", "space-2xs": "0.25rem" }, fontFamily: { "display": ["Public Sans"], "body-sm": ["Public Sans"], "label-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "body-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-lg": ["Public Sans"], "headline-sm": ["Public Sans"], "label-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"] }, fontSize: { "display": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.025em", fontWeight: "600" }], "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[1px_0_10px_rgba(15,41,66,0.04)]"><div class="flex flex-col"><div class="px-space-md pb-space-md border-b border-surface-container-high flex items-center gap-space-sm"><div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[24px]">balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">LM-OVCS</span><span class="font-label-sm text-label-sm text-outline">Operational Hub</span></div></div><div class="p-space-md"><div class="bg-surface-container-highest p-space-sm rounded mb-space-md"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">Session Role</span><span class="px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>Active</span></div><div class="font-label-lg text-label-lg text-primary mt-1">Senior Field Inspector</div><div class="font-label-sm text-label-sm text-on-surface-variant">Zone 4 - Industrial Weights</div></div><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Navigation Console</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded"><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="user-dashboard" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">grid_view</span>User Dashboard</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="lmo-portal" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">verified_user</span>LMO Portal</a><a aria-current="page" class="flex items-center px-space-sm py-2 transition-all bg-primary-container text-on-primary font-label-lg text-label-lg rounded" data-path="admin-console" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">admin_panel_settings</span>Admin Console</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="verify-certificate" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">search_check</span>Verify Certificate</a></nav></div></div><div class="px-space-md flex flex-col gap-space-xs border-t border-surface-container-high pt-space-md"><div class="flex items-center justify-between font-label-sm text-label-sm text-outline"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Secured Session</span><span>TLS 1.3</span></div><a class="flex items-center text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm py-1" data-path="home" href="index.html"><span class="material-symbols-outlined mr-1 text-[16px]">arrow_back</span>Back to Public Portal</a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_6px_rgba(15,41,66,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-xs text-[18px] text-outline">search</span><input class="h-10 pl-8 pr- space-sm py-1 font-body-sm text-body-sm bg-surface-container-low rounded border border-outline-variant/60 focus:outline-none focus:border-primary w-80 text-on-surface" placeholder="Search registry, cases, certificates (Ctrl+/)..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-high rounded text-primary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">domain</span>National Weights &amp; Measures Node #09</div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high relative transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Audit Log" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"><span class="material-symbols-outlined text-[20px]">history</span></button><div class="h-6 w-[1px] bg-outline-variant/40 mx-1"></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm font-semibold text-primary leading-none">Insp. K. Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">Central Division</span></div></div></div></header><main class="relative pt-16 bg-surface"><div class="w-full px-space-lg py-space-lg min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Command Header Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          Statutory Level 4 Node
+        </span>
+<span class="text-outline text-label-sm font-label-sm">• Gazetted Enforcement Portal</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight leading-tight">
+        State Metrology Directorate
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Central Operations &amp; Enforcement Command • Department of Consumer Affairs &amp; Legal Metrology
+      </p>
+</div>
+<!-- State Geographic Filter & Quick Action Strip -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-2 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">map</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider leading-none">Jurisdiction</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">National Capital Territory - All 11 Districts</span>
+</div>
+<button class="ml-2 w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-dim transition-colors" title="Switch Territory">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-all" onclick="toggleAdvisoryModal()">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">campaign</span>
+          Broadcast Advisory
+        </button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+          Export MIS (PDF/XLS)
+        </button>
+</div>
+</div>
+</div>
+<!-- Operational Subnav Modules -->
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm mb-space-xl flex items-center gap-1 overflow-x-auto no-scrollbar">
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg whitespace-nowrap" href="index.html">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+      Dashboard
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+      Application Queue
+      <span class="px-1.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary-container font-label-sm text-label-sm font-bold">0</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+      Inspector Allotment
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+      Registered Instruments
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">group</span>
+      LMO Directory
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">science</span>
+      GATC Labs
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">token</span>
+      Certificate Vault
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span>
+      Compliance Reports
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">security</span>
+      Audit Logs
+    </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+      Statutory Settings
+    </a>
+</div>
+<!-- Top Metric Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Card 1: Applications -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Statutory Workload</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-0.5">Total State Applications</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-display text-primary leading-none">48,920</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 12.4%
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">vs previous 30-day cycle</span>
+</div>
+</div>
+<!-- Mini Sparkline Decor -->
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Cleared: 46,110 (94.2%)</span>
+<span class="text-primary font-semibold">Active Run</span>
+</div>
+</div>
+<!-- Card 2: Pending Dispatch -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Field Pipeline</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-0.5">Pending Inspector Dispatch</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-display text-secondary-container leading-none">0</span>
+<span class="font-label-md text-label-md text-outline">in queue</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center">
+            Target &lt; 48h
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Median turnaround: 31.4h</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Auto-allot candidate: 0</span>
+<span class="text-secondary-container font-semibold">0 Critical SLA</span>
+</div>
+</div>
+<!-- Card 3: Revenue Collected -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Fiscal Inflow</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-0.5">Stamping Revenue Collected</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-display text-primary leading-none">₹4.82</span>
+<span class="font-headline-md text-headline-md text-primary">Cr</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center">
+            100% Direct
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Consolidated Treasury Deposit</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>e-Challan reconciliations: 99.8%</span>
+<span class="text-primary font-semibold">Q2 Target +18%</span>
+</div>
+</div>
+<!-- Card 4: Non-Compliance / Enforcement -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Vigilance &amp; Seizures</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-0.5">Active Enforcement Actions</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-display text-primary leading-none">87</span>
+<span class="font-label-md text-label-md text-outline">cases opened</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center">
+            21 Fast Track
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sec. 24 / Rule 11 Violations</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>14 Sealing notices issued today</span>
+<span class="text-primary font-semibold">High Alert</span>
+</div>
+</div>
+</div>
+<!-- Analytics & Visualizations Row -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Chart: Monthly Volume & Clearance Rate (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Monthly Application Volume &amp; Clearance Rate</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">FY 2024-25</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Statistical intake vs formal certificates stamped under the Legal Metrology Act
+          </p>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary"></span>
+<span class="text-on-surface-variant">Submitted</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-secondary-container"></span>
+<span class="text-on-surface-variant">Cleared &amp; Stamped</span>
+</div>
+</div>
+</div>
+<!-- SVG Graph Visualization -->
+<div class="w-full h-64 relative flex flex-col justify-end pt-4 pb-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 200">
+<defs>
+<lineargradient id="primaryBarGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#001428" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#0f2942" stop-opacity="0.75"></stop>
+</lineargradient>
+<lineargradient id="clearanceGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#fd651e" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#a73a00" stop-opacity="0.8"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#e5eeff" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<line stroke="#e5eeff" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="65" y2="65"></line>
+<line stroke="#e5eeff" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="110" y2="110"></line>
+<line stroke="#e5eeff" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="155" y2="155"></line>
+<line stroke="#cbdbf5" stroke-width="1.5" x1="0" x2="700" y1="195" y2="195"></line>
+<!-- October -->
+<rect fill="url(#primaryBarGrad)" height="135" rx="3" width="28" x="35" y="60"></rect>
+<rect fill="url(#clearanceGrad)" height="120" rx="3" width="28" x="67" y="75"></rect>
+<!-- November -->
+<rect fill="url(#primaryBarGrad)" height="147" rx="3" width="28" x="145" y="48"></rect>
+<rect fill="url(#clearanceGrad)" height="133" rx="3" width="28" x="177" y="62"></rect>
+<!-- December -->
+<rect fill="url(#primaryBarGrad)" height="125" rx="3" width="28" x="255" y="70"></rect>
+<rect fill="url(#clearanceGrad)" height="115" rx="3" width="28" x="287" y="80"></rect>
+<!-- January -->
+<rect fill="url(#primaryBarGrad)" height="157" rx="3" width="28" x="365" y="38"></rect>
+<rect fill="url(#clearanceGrad)" height="145" rx="3" width="28" x="397" y="50"></rect>
+<!-- February -->
+<rect fill="url(#primaryBarGrad)" height="165" rx="3" width="28" x="475" y="30"></rect>
+<rect fill="url(#clearanceGrad)" height="153" rx="3" width="28" x="507" y="42"></rect>
+<!-- March (Active) -->
+<rect fill="url(#primaryBarGrad)" height="173" rx="3" width="28" x="585" y="22"></rect>
+<rect fill="url(#clearanceGrad)" height="161" rx="3" width="28" x="617" y="34"></rect>
+<!-- Trend Trajectory Line -->
+<path d="M 50,75 Q 160,60 270,78 T 485,38 T 630,28" fill="none" stroke="#fd651e" stroke-width="2.5"></path>
+<circle cx="630" cy="28" fill="#fd651e" r="4"></circle>
+</svg>
+</div>
+<div class="grid grid-cols-6 pt-2 text-center font-label-sm text-label-sm text-outline">
+<span>Oct 24</span>
+<span>Nov 24</span>
+<span>Dec 24</span>
+<span>Jan 25</span>
+<span>Feb 25</span>
+<span class="text-primary font-bold">Mar 25 (96.4%)</span>
+</div>
+<div class="mt-space-md pt-space-sm flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface">Average clearance SLA down to <strong>3.2 business days</strong> across all instrument categories.</span>
+</div>
+<a class="font-label-sm text-label-sm text-secondary-container hover:underline font-bold flex items-center gap-1" href="index.html">
+          Detailed Analytics <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- District Compliance Heatmap & Anomaly Matrix (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">District Compliance &amp; Anomaly Matrix</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Regional backlog monitoring &amp; verification officer distribution
+          </p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+</span>
+</div>
+<div class="space-y-space-xs my-space-xs">
+<!-- Central Zone -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-10 rounded-full bg-primary"></div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-semibold">Central Commercial Zone</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14 Officers • 1,280 Instruments Active</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary px-2 py-0.5 bg-surface-container-highest rounded-full">
+              98.2% Sane
+            </span>
+<span class="font-label-sm text-label-sm text-outline mt-1">4 queue delay</span>
+</div>
+</div>
+<!-- South Zone -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-10 rounded-full bg-primary"></div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-semibold">South &amp; Industrial Corridor</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">22 Officers • 2,940 Weighbridges</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary px-2 py-0.5 bg-surface-container-highest rounded-full">
+              95.6% Sane
+            </span>
+<span class="font-label-sm text-label-sm text-outline mt-1">11 queue delay</span>
+</div>
+</div>
+<!-- North Zone (Anomaly) -->
+<div class="p-3 bg-secondary-container/10 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-10 rounded-full bg-secondary-container"></div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-semibold">North Retail &amp; Mandi Cluster</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9 Officers • 3,410 Scales Active</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary-container px-2 py-0.5 bg-secondary-container/20 rounded-full">
+              Anomaly Alert
+            </span>
+<span class="font-label-sm text-label-sm text-secondary-container font-semibold mt-1">68 queue delay</span>
+</div>
+</div>
+<!-- West Zone -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-10 rounded-full bg-primary"></div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-semibold">West Distribution Hub</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">16 Officers • 1,840 Heavy Meters</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary px-2 py-0.5 bg-surface-container-highest rounded-full">
+              92.1% Sane
+            </span>
+<span class="font-label-sm text-label-sm text-outline mt-1">23 queue delay</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">Cluster Anomaly Threshold: &gt; 35 requests</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-dim font-label-sm text-label-sm font-semibold transition-colors">
+          Rebalance Field Quotas
+        </button>
+</div>
+</div>
+</div>
+<!-- Priority Application Assignment & Dispatch Queue Section -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-sm mb-space-lg">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">Priority Application Assignment &amp; Dispatch Queue</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">0 Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Verify statutory credentials, allot approved LMO field inspectors, or re-route to accredited GATC labs.
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary-container/40 text-on-secondary/60 font-label-lg text-label-lg cursor-not-allowed" disabled="" id="bulkAllotBtn" title="No pending applications to allot">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+          Auto-Allot Eligible (0)
+        </button>
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+          Filter
+        </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Application ID</th>
+<th class="py-3 px-4">Merchant / Facility</th>
+<th class="py-3 px-4">Instrument Category</th>
+<th class="py-3 px-4">District / Beat</th>
+<th class="py-3 px-4 text-center">Days in Queue</th>
+<th class="py-3 px-4">Recommended Officer / Lab</th>
+<th class="py-3 px-4 rounded-r-lg text-right">Statutory Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+</tbody>
+</table>
+<!-- Empty State: no applications in the dispatch queue yet -->
+<div class="flex flex-col items-center justify-center text-center py-space-2xl px-space-md">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-space-sm">
+<span class="material-symbols-outlined text-[26px]">inbox</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold">No applications in the dispatch queue</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-sm">
+          New verification, stamping, and re-inspection requests will appear here as they are submitted.
+        </p>
+</div>
+</div>
+<!-- Table Pagination & Queue Status -->
+<div class="mt-space-md pt-space-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<span>Showing <strong>0</strong> of <strong>0</strong> priority applications in dispatch pipeline</span>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary/50 font-label-sm text-label-sm font-semibold cursor-not-allowed" disabled="">Previous</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold">1</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary/50 font-label-sm text-label-sm font-semibold cursor-not-allowed" disabled="">Next</button>
+</div>
+</div>
+</div>
+<!-- Bottom Grid: Recent Enforcement Activity & Audit Trail + Officer Watch -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Live Activity Stream (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Live Enforcement &amp; Audit Trail</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Realtime Feed
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Statutory records signed with Digital Token HSM (Sec. 15, LM Enforcement Rules)
+          </p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-dim font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">refresh</span> Refresh
+        </button>
+</div>
+<!-- Empty State: no enforcement/audit activity recorded yet -->
+<div class="flex flex-col items-center justify-center text-center py-space-2xl px-space-md">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-space-sm">
+<span class="material-symbols-outlined text-[26px]">fact_check</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold">No activity recorded yet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-sm">
+        Seizures, certificate issuances, grievance escalations, and lab calibrations will show up here as they happen.
+      </p>
+</div>
+</div>
+<!-- Right Side: Statutory Advisory & Officer Deployment Gauge (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Officer Deployment Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Field Force Active Status</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">61 / 68 Deployed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Current duty roster of gazetted legal metrology inspectors across 11 NCT divisions.
+          </p>
+</div>
+<div class="my-space-md flex items-center justify-around p-3 bg-surface-container-low rounded-lg">
+<div class="text-center">
+<span class="font-headline-md text-headline-md text-primary font-bold block">42</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">On-Site Audits</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/50"></div>
+<div class="text-center">
+<span class="font-headline-md text-headline-md text-secondary-container font-bold block">19</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Enforcement Raids</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/50"></div>
+<div class="text-center">
+<span class="font-headline-md text-headline-md text-on-surface-variant font-bold block">7</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">HQ Chambers</span>
+</div>
+</div>
+<!-- Quick Quick Statutory Actions -->
+<div class="space-y-2">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high text-primary hover:bg-surface-dim font-label-lg text-label-lg font-semibold flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">currency_rupee</span>
+              Manage Statutory Fee Schedule
+            </span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high text-primary hover:bg-surface-dim font-label-lg text-label-lg font-semibold flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+              Batch Verify Stamping Holograms
+            </span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high text-primary hover:bg-surface-dim font-label-lg text-label-lg font-semibold flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shield_person</span>
+              Summon District Review Meet
+            </span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Gazetted Advisory Dispatch Widget -->
+<div class="bg-primary text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline-variant">Immediate Action</span>
+<span class="material-symbols-outlined text-[20px] text-secondary-container">priority_high</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary">Gazette Advisory: Mandatory Dual Unit Displays</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+            Notification GSR 121(E) requires all pre-packaged commodity packers to display unit sale price in Standard Metric System. Deadline in 14 days.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-primary-container">Target: 4,120 Registered Packers</span>
+<button class="px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity" onclick="toggleAdvisoryModal()">
+            Send Broadcast
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal: Broadcast Advisory (Controlled via JS) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-primary/40 backdrop-blur-sm p-4" id="advisoryModal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl p-space-xl shadow-xl flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">campaign</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Departmental Advisory Broadcast</h3>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-dim" onclick="toggleAdvisoryModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Issue an authoritative operational directive or statutory bulletin to all licensed manufacturers, dealers, and field inspectors.
+      </p>
+<div class="space-y-3">
+<div>
+<label class="font-label-lg text-label-lg text-primary block mb-1">Target Recipient Cohort</label>
+<select class="w-full h-11 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-primary focus:outline-none">
+<option>All Licensed Metrology Officers &amp; Inspectors (NCT-wide)</option>
+<option>Commercial Weighbridge Operators</option>
+<option>Registered Packaged Commodity Importers</option>
+<option>Authorized Calibration Laboratories (GATC)</option>
+</select>
+</div>
+<div>
+<label class="font-label-lg text-label-lg text-primary block mb-1">Statutory Gazette Reference</label>
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-primary focus:outline-none" type="text" value="GSR-2025/LM-DIR-04/ENF"/>
+</div>
+<div>
+<label class="font-label-lg text-label-lg text-primary block mb-1">Advisory Brief &amp; Directives</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-primary focus:outline-none resize-none" placeholder="Enter executive order details, enforcement timelines, and legal penalties for non-compliance..." rows="4"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-primary font-label-lg text-label-lg hover:bg-surface-dim" onclick="toggleAdvisoryModal()">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container flex items-center gap-1.5" onclick="sendAdvisorySuccess()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+          Broadcast Gazette Bulletin
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 hidden transition-all duration-300" id="toastNotification">
+<div class="bg-primary text-on-primary px-space-md py-3 rounded-xl shadow-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" id="toastIcon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold" id="toastTitle">Action Executed</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim" id="toastDesc">Details updated in state registry.</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleAdvisoryModal() {
+    const modal = document.getElementById('advisoryModal');
+    if (modal.classList.contains('hidden')) {
+      modal.classList.remove('hidden');
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function showToast(title, desc, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    document.getElementById('toastTitle').textContent = title;
+    document.getElementById('toastDesc').textContent = desc;
+    document.getElementById('toastIcon').textContent = icon;
+    
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 4500);
+  }
+
+  function sendAdvisorySuccess() {
+    toggleAdvisoryModal();
+    showToast('Gazette Bulletin Dispatched', 'Broadcast transmitted to 4,120 registered stakeholder nodes.', 'campaign');
+  }
+
+  function allotNotification(appId, officer) {
+    showToast('Officer Allotment Confirmed', appId + ' assigned to ' + officer + ' under 48h SLA token.', 'assignment_ind');
+  }
+
+  function runAutoAllotSimulation() {
+    const btn = document.getElementById('bulkAllotBtn');
+    btn.disabled = true;
+    btn.classList.add('opacity-50');
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Processing Queue...';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.classList.remove('opacity-50');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> Queue Allotted';
+      showToast('104 Applications Auto-Allotted', 'Workload intelligently distributed based on Beat GEO-zones and GATC load.', 'bolt');
+    }, 1200);
+  }
+</script></div></main></div><script src="app.js"></script>
+</body></html>

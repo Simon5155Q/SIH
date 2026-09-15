@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#00174b", "inverse-surface": "#213145", "on-surface-variant": "#43474d", "on-primary-container": "#7991af", "primary": "#001428", "on-error-container": "#93000a", "tertiary-fixed-dim": "#b4c5ff", "secondary-fixed-dim": "#ffb599", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "surface-container-highest": "#d3e4fe", "on-primary-fixed-variant": "#314863", "on-tertiary": "#ffffff", "surface-tint": "#49607c", "on-secondary-container": "#571a00", "on-secondary": "#ffffff", "primary-container": "#0f2942", "outline": "#74777e", "primary-fixed-dim": "#b0c9e8", "on-surface": "#0b1c30", "on-primary-fixed": "#011d35", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#7f2b00", "inverse-primary": "#b0c9e8", "surface-dim": "#cbdbf5", "on-background": "#0b1c30", "secondary": "#a73a00", "outline-variant": "#c3c6ce", "surface-container-high": "#dce9ff", "secondary-fixed": "#ffdbce", "on-error": "#ffffff", "surface-variant": "#d3e4fe", "on-tertiary-fixed-variant": "#003ea8", "tertiary-container": "#002265", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-bright": "#f8f9ff", "primary-fixed": "#d1e4ff", "inverse-on-surface": "#eaf1ff", "secondary-container": "#fd651e", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "on-secondary-fixed": "#370e00", "error-container": "#ffdad6", "on-tertiary-container": "#5d88ff", "tertiary": "#001039" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "container-max": "1280px", "space-2xl": "3rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "space-3xl": "4rem", "space-2xs": "0.25rem" }, fontFamily: { "display": ["Public Sans"], "body-sm": ["Public Sans"], "label-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "body-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-lg": ["Public Sans"], "headline-sm": ["Public Sans"], "label-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"] }, fontSize: { "display": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.025em", fontWeight: "600" }], "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[1px_0_10px_rgba(15,41,66,0.04)]"><div class="flex flex-col"><div class="px-space-md pb-space-md border-b border-surface-container-high flex items-center gap-space-sm"><div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[24px]">balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">LM-OVCS</span><span class="font-label-sm text-label-sm text-outline">Operational Hub</span></div></div><div class="p-space-md"><div class="bg-surface-container-highest p-space-sm rounded mb-space-md"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">Session Role</span><span class="px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>Active</span></div><div class="font-label-lg text-label-lg text-primary mt-1">Senior Field Inspector</div><div class="font-label-sm text-label-sm text-on-surface-variant">Zone 4 - Industrial Weights</div></div><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Navigation Console</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded"><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="user-dashboard" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">grid_view</span>User Dashboard</a><a aria-current="page" class="flex items-center px-space-sm py-2 transition-all bg-primary-container text-on-primary font-label-lg text-label-lg rounded" data-path="lmo-portal" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">verified_user</span>LMO Portal</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="admin-console" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">admin_panel_settings</span>Admin Console</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="verify-certificate" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">search_check</span>Verify Certificate</a></nav></div></div><div class="px-space-md flex flex-col gap-space-xs border-t border-surface-container-high pt-space-md"><div class="flex items-center justify-between font-label-sm text-label-sm text-outline"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Secured Session</span><span>TLS 1.3</span></div><a class="flex items-center text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm py-1" data-path="home" href="index.html"><span class="material-symbols-outlined mr-1 text-[16px]">arrow_back</span>Back to Public Portal</a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_6px_rgba(15,41,66,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-xs text-[18px] text-outline">search</span><input class="h-10 pl-8 pr- space-sm py-1 font-body-sm text-body-sm bg-surface-container-low rounded border border-outline-variant/60 focus:outline-none focus:border-primary w-80 text-on-surface" placeholder="Search registry, cases, certificates (Ctrl+/)..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-high rounded text-primary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">domain</span>National Weights &amp; Measures Node #09</div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high relative transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Audit Log" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"><span class="material-symbols-outlined text-[20px]">history</span></button><div class="h-6 w-[1px] bg-outline-variant/40 mx-1"></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm font-semibold text-primary leading-none">Insp. K. Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">Central Division</span></div></div></div></header><main class="relative pt-16 bg-surface"><div class="w-full px-space-lg py-space-lg min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full gap-space-lg pb-space-3xl">
+<!-- Top Sovereign Registry Strip & Title -->
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm tracking-widest uppercase">Form VIII-A</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Directorate of Legal Metrology</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-md text-label-md text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+          Statutory Verification Under Rule 14
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Protocol Hash</span>
+<code class="px-2 py-1 bg-surface-container-high text-primary font-label-sm text-label-sm rounded font-mono font-bold">SHA-256: 8C91...F47B</code>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pt-space-xs">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Statutory Inspection &amp; Stamping Protocol</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Conducted pursuant to Section 24, Legal Metrology Act 2009 read with Legal Metrology (General) Rules 2011</p>
+</div>
+<div class="flex items-center gap-space-xs self-start lg:self-auto">
+<span class="px-3 py-1.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Audit Lock Active
+        </span>
+<span class="px-3 py-1.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-md text-label-md font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>
+          Standards Certified
+        </span>
+</div>
+</div>
+</div>
+<!-- Application Context Bar / Metadata Panel -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Application Dossier</span>
+<span class="material-symbols-outlined text-[18px]">folder_shared</span>
+</div>
+<div class="mt-space-xs">
+<div class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">LM-APP-2026-00125</div>
+<div class="font-label-md text-label-md text-on-surface-variant truncate mt-0.5">Applicant: Apex Retailers Pvt Ltd</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Metrological Instrument</span>
+<span class="material-symbols-outlined text-[18px]">scale</span>
+</div>
+<div class="mt-space-xs">
+<div class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">INS-WGT-10245</div>
+<div class="font-label-md text-label-md text-on-surface-variant truncate mt-0.5">Non-Automatic: Class III Counter Scale</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Field Venue Target</span>
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+</div>
+<div class="mt-space-xs">
+<div class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight truncate">Store #4, Connaught Pl.</div>
+<div class="font-label-md text-label-md text-on-surface-variant truncate mt-0.5">Inner Circle Block C, New Delhi Node</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-primary-fixed-dim">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Inspection Epoch</span>
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div class="mt-space-xs">
+<div class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight" id="live-timer">14:32:08 UTC</div>
+<div class="font-label-md text-label-md text-primary-fixed-dim truncate mt-0.5">Inspector ID: LMO-DEL-0418</div>
+</div>
+</div>
+</div>
+<!-- Primary Layout: Checklist & Evidence Stack -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: 8-Point Statutory Checklist (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-wide">Statutory Verification Criteria (8 Mandatory Checks)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Completed:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold" id="completion-counter">8 / 8 Checked</span>
+</div>
+</div>
+<!-- Checklist Container -->
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">01</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Physical Condition &amp; Anti-Fraud Seals Intact</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Inspect body integrity, manufacturer rivets, warranty seals, and ensure zero unmetered external access points.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Ref: Rule 21(1)(b)</span>
+<span>•</span>
+<span class="text-secondary font-semibold">Zero Tolerance for Tampering</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_1" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_1" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_1" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">02</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Zero Indication &amp; Tare Balance Mechanism</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Automatic zero-setting and non-automatic tare balance tests. Return-to-zero within ±0.25e margin on release.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Nominal: 0.000 kg</span>
+<span>•</span>
+<span class="text-on-surface-variant font-semibold">Limit: ±0.25 scale interval (e)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_2" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_2" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_2" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 3 (MPE Complex Test with Numeric Matrix) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-secondary-container text-on-secondary font-label-md text-label-md flex items-center justify-center font-bold">03</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-space-xs">
+                  Maximum Permissible Error (MPE) Test Matrix
+                  <span class="px-2 py-0.5 bg-surface-container-high text-primary font-label-sm text-label-sm rounded uppercase font-bold">Critical</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Verification test with Class M1 certified working standard weights across operational load intervals.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_3" type="radio" value="pass"/> PASS
+              </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_3" type="radio" value="fail"/> FAIL
+              </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_3" type="radio" value="na"/> N/A
+              </label>
+</div>
+</div>
+<!-- MPE Dynamic Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs bg-surface-container-low p-space-sm rounded">
+<!-- 5kg load -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span class="font-semibold text-primary">Load 5 kg (Min Cap)</span>
+<span class="text-secondary font-mono">Limit ±0.50g</span>
+</div>
+<div class="flex items-center gap-1">
+<input class="w-full font-mono font-bold text-primary px-2 py-1.5 bg-surface-container-low rounded border-0 text-sm focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none" type="text" value="+0.18"/>
+<span class="font-label-sm text-label-sm text-outline pr-1 font-bold">g</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#15803D] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Tolerance (&lt; 0.5g)
+              </span>
+</div>
+<!-- 15kg load -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span class="font-semibold text-primary">Load 15 kg (Half Cap)</span>
+<span class="text-secondary font-mono">Limit ±0.50g</span>
+</div>
+<div class="flex items-center gap-1">
+<input class="w-full font-mono font-bold text-primary px-2 py-1.5 bg-surface-container-low rounded border-0 text-sm focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none" type="text" value="+0.24"/>
+<span class="font-label-sm text-label-sm text-outline pr-1 font-bold">g</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#15803D] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Tolerance (&lt; 0.5g)
+              </span>
+</div>
+<!-- 30kg load -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span class="font-semibold text-primary">Load 30 kg (Max Cap)</span>
+<span class="text-secondary font-mono">Limit ±1.00g</span>
+</div>
+<div class="flex items-center gap-1">
+<input class="w-full font-mono font-bold text-primary px-2 py-1.5 bg-surface-container-low rounded border-0 text-sm focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none" type="text" value="-0.32"/>
+<span class="font-label-sm text-label-sm text-outline pr-1 font-bold">g</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#15803D] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> In Tolerance (&lt; 1.0g)
+              </span>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">04</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Sensitivity &amp; Eccentric Loading Test</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Load 10kg placed sequentially in 4 quadrant centers of load receiver pan. Corner variance ≤ 1e (1.0g).</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Quadrant Max Drift: 0.18g</span>
+<span>•</span>
+<span class="text-[#15803D] font-semibold">Passes OIML R76 Standards</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_4" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_4" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_4" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">05</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Mandatory Government Model Approval Stamping Visible</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Physical stamp plate must match national registry certificate code: <span class="font-mono font-bold text-primary">IND/09/18/342</span>.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Central Model Register: Active</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">Valid till 2029</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_5" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_5" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_5" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">06</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Digital Display &amp; Secondary Customer Display Functioning</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High-contrast LED/VFD displays readable under ambient retail luminescence. No burnt segments or flicker.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Dual Facing: Verified</span>
+<span>•</span>
+<span>Height &gt; 15mm</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_6" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_6" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_6" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">07</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Sealing Wire Aperture Accessible &amp; Undamaged</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Housing flange drill hole unoccluded, enabling lead wire pass-through for security plier crimping.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Diameter: 2.2mm</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">Ready for Lead Seal LMO-7712</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_7" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_7" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_7" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm hover:shadow transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-xl">
+<span class="flex-shrink-0 w-7 h-7 rounded bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center font-bold">08</span>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-semibold">Environment &amp; Leveling Bubble Alignment</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Spirit level indicator concentric within target reticle. Foot screws firmly locked against operational counter vibration.</p>
+<div class="mt-1 flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span>Vibration: &lt; 0.05g RMS</span>
+<span>•</span>
+<span class="text-[#15803D] font-semibold">Base Stabilized</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0 bg-surface-container-low p-1 rounded">
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer transition-colors bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold">
+<input checked="" class="accent-secondary h-3.5 w-3.5" name="chk_8" type="radio" value="pass"/> PASS
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_8" type="radio" value="fail"/> FAIL
+            </label>
+<label class="flex items-center gap-1 px-3 py-1.5 rounded cursor-pointer hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<input class="accent-secondary h-3.5 w-3.5" name="chk_8" type="radio" value="na"/> N/A
+            </label>
+</div>
+</div>
+</div>
+<!-- Inspector Field Notes -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+          Statutory Endorsements &amp; Inspector Observations
+        </label>
+<textarea class="w-full font-body-sm text-body-sm text-on-surface bg-surface-container-low p-space-sm rounded border-0 outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary" placeholder="Enter technical notes, ambient room temperature, calibration serials, or special observations as mandated by Section 24..." rows="3">Instrument verified in compliance with Seventh Schedule norms. Ambient temperature measured at 24.2°C; relative humidity 48%. Working standard kit (Cert No: NPL/LM/2025/8812) utilized with traceability to national prototype.</textarea>
+</div>
+</div>
+<!-- RIGHT: Geolocation, Photographic Evidence & Stamping Controls (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Geolocation Verification Box -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Field Spatial Anchor</span>
+<span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span> GPS Locked
+          </span>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded-lg relative overflow-hidden flex flex-col justify-end p-space-xs" data-location="Connaught Place, New Delhi, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCI0oCifxsDBnSEnmHl5rtmHULTFPsw9d1p0LcnRxzAfmW-ozUwZc4KiIemVJSzLvuoRQeV087N9Ob7-sn57A8ySGgQPmS43DZwhx9RDVL2I6sia2w4lRhktlCj_KWKISwHlWqR6ldVC0GQSAM-fi0ycH26tutBF7fxO7xcF7gjntty7BprER_HR3eQicy3Mepp7dq0zssOWyT7n2jwoBwVMAhS4RXlNxghytDNw9hzbJeLYSzsdHFwAw');">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent"></div>
+<div class="relative z-10 text-on-primary">
+<div class="font-label-sm text-label-sm text-primary-fixed-dim">Registered Geofence: Zone 01</div>
+<div class="font-label-lg text-label-lg font-bold font-mono">28.6315° N, 77.2167° E</div>
+</div>
+</div>
+<button class="w-full py-2.5 px-3 bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors font-semibold" id="capture-coordinates-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">my_location</span>
+          Capture Field Coordinates (Lat: 28.6315° N, Long: 77.2167° E - Verified)
+        </button>
+</div>
+<!-- Photo Upload Evidence Cards (3 Key Views) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Photographic Evidence (Mandatory)</span>
+<span class="font-label-sm text-label-sm text-outline">3 of 3 Uploaded</span>
+</div>
+<div class="grid grid-cols-1 gap-space-xs">
+<!-- Photo 1: Nameplate -->
+<div class="flex items-center gap-space-sm p-space-xs bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<img class="w-16 h-16 rounded object-cover flex-shrink-0" data-alt="A clean, close-up photograph of an industrial non-automatic weighing scale model approval metal nameplate with sharp engraved text showing IND/09/18/342, serial INS-WGT-10245, set under clear inspection lighting in a retail facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB300uqjVYu6DcysaEeVZ7RF7e6DFBuSTTnDJaRHbHBaAj8HRChBCrs1yCgvV0kTG8j6E6U1jMe2808EKuwtCBqCXWZehET0CXmjfMnP91gJn8pfgbumiWNQCTkimqM0jXdiRQzVmuMbjMJ6XA8NJRN83XJ-XzTaign-ek9rCMwEaec03CUDanK_1jXUgquWlJYPA6NQN5AAfUJEt7OXFsa4IiMQ6R3OhkRaF_kyKxqxWHVG2L5WeajAg"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Instrument Nameplate &amp; Model Seal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IMG_2026_0224_001.raw</span>
+<span class="font-label-sm text-label-sm text-[#15803D] flex items-center gap-1 font-semibold mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Exif Verified (GPS embedded)
+              </span>
+</div>
+<button aria-label="Inspect Photo" class="p-1.5 text-outline hover:text-primary rounded">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Photo 2: Test Weight Pan -->
+<div class="flex items-center gap-space-sm p-space-xs bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<img class="w-16 h-16 rounded object-cover flex-shrink-0" data-alt="A high-contrast macro photograph showing polished brass cylindrical standard test weights stamped with official verification stamps sitting centrally on a stainless steel scale pan during an official calibration audit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYp2QVHdhZdnAGdLNo9a2oY0XH3IZpwGYbWxNjOphuG8Tu5AXkA29sCnULeuVHvRcDb-PXg8Fhdh-TWb--XDrdDuWwGLB2O7H6XKm1kcN6-z4nWpqxXgmyRW2Rtd0NcIxK6QHCeBwfdlNFVoqo9apyEAXhY0pBvtV_OUDk1gv5HJltjpxEqQ1Xvpyk72WaQhjiVixgJvVtE9VFRX7OwFVUkDB3tTe3abflqLVwYvQ4yaHMS9C0OR6ywA"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Test Weight Verification on Pan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IMG_2026_0224_002.raw</span>
+<span class="font-label-sm text-label-sm text-[#15803D] flex items-center gap-1 font-semibold mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> 30 kg Full Load Trace
+              </span>
+</div>
+<button aria-label="Inspect Photo" class="p-1.5 text-outline hover:text-primary rounded">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Photo 3: Applied Hologram -->
+<div class="flex items-center gap-space-sm p-space-xs bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<img class="w-16 h-16 rounded object-cover flex-shrink-0" data-alt="A focused photograph of a tamper-evident holographic government security sticker marked HG-2026-8891 applied across the junction of a digital scale chassis with official green security ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCOCWHwo5-rJ8WOw18QMLBKBreY4GN8bsx9YKvk1ugH3r_aPVN4_FVqygcOTvWyECZnjAepTCc-znXGDtgqOWe_bm2uB04SIIERWCHqGziiyCFt6vd9yaeFUancdNgxpZEw81BxvXAfLOydpL1HfaFLIx7lmzwSYQ6zQXHOvSFBwENMylLyROsiTgweNwWkNGfzLjuQLEauCwYEGHu4STWgVamyCFfmJMLepwOy3xj1rGdQRwfvBM2rQ"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-primary font-bold truncate">Applied Hologram Stamp</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IMG_2026_0224_003.raw</span>
+<span class="font-label-sm text-label-sm text-[#15803D] flex items-center gap-1 font-semibold mt-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Tamper Pattern Intact
+              </span>
+</div>
+<button aria-label="Inspect Photo" class="p-1.5 text-outline hover:text-primary rounded">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm rounded flex items-center justify-center gap-1 border-0" type="button">
+<span class="material-symbols-outlined text-[16px]">add_a_photo</span> Add Supplementary Evidence Frame
+        </button>
+</div>
+<!-- Security Hardware & Stamping Details Form -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Physical Stamping Records</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">encrypted</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">
+            Hologram Sticker Number <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline">verified</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low font-mono font-bold text-primary rounded outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-sm" type="text" value="HG-2026-8891"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Serial allocated from Batch DL-26-W09</span>
+</div>
+<div class="flex flex-col gap-space-xs pt-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">
+            Security Lead Seal Punch ID <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline">hardware</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low font-mono font-bold text-primary rounded outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary text-sm" type="text" value="LMO-7712-P1"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Custody verified with Inspector Vance</span>
+</div>
+<div class="flex flex-col gap-space-xs pt-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">
+            Next Verification Due Date
+          </label>
+<div class="flex items-center justify-between px-3 py-2 bg-surface-container-high rounded text-primary font-label-md text-label-md font-bold">
+<span>23 February 2027</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">12 Month Validity</span>
+</div>
+</div>
+</div>
+<!-- Statutory Adjudication Toggle (PASS vs REJECT) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Statutory Adjudication Decision</span>
+<div class="grid grid-cols-2 gap-space-xs p-1 bg-surface-container-low rounded-lg">
+<button class="py-2.5 px-3 rounded-md bg-[#DCFCE7] text-[#15803D] font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm" id="btn-pass" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+            PASS (Issue)
+          </button>
+<button class="py-2.5 px-3 rounded-md text-on-surface-variant hover:text-error hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all" id="btn-reject" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+            REJECT (Seize)
+          </button>
+</div>
+<div class="p-space-xs rounded bg-[#DCFCE7]/60 text-[#15803D] font-label-sm text-label-sm flex items-start gap-1.5" id="decision-summary">
+<span class="material-symbols-outlined text-[16px] flex-shrink-0 mt-0.5">verified_user</span>
+<span>Instrument meets all 8 Schedule standards. Qualified for generation of Form VIII Verification Certificate.</span>
+</div>
+</div>
+<!-- Execution Action Buttons -->
+<div class="flex flex-col gap-space-xs">
+<button class="w-full py-3 px-space-md bg-secondary-container hover:bg-secondary text-on-secondary font-label-lg text-label-lg rounded-md font-bold flex items-center justify-center gap-space-xs shadow-md transition-all" id="submit-inspection-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+          Sign &amp; Issue Digital Certificate (DSC)
+        </button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2.5 px-3 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md rounded font-semibold flex items-center justify-center gap-1 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+            Save Draft
+          </button>
+<button class="py-2.5 px-3 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md rounded font-semibold flex items-center justify-center gap-1 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+            Field Receipt
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Statutory Regulatory Footer Strip -->
+<div class="mt-space-lg p-space-md bg-surface-container-low rounded-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">shield</span>
+<span>Official Government Record • Unauthorized alteration or false certification is punishable under Section 49 of the Legal Metrology Act 2009 with imprisonment and fine.</span>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0 font-mono">
+<span>DSC NODE: DEL-SEC-09</span>
+<span>STATUS: SYNCHRONIZED</span>
+</div>
+</div>
+</div>
+<script>
+  // Live UTC Clock for Audit Precision
+  function updateTimer() {
+    const el = document.getElementById('live-timer');
+    if (!el) return;
+    const now = new Date();
+    el.textContent = now.toTimeString().split(' ')[0] + ' UTC';
+  }
+  setInterval(updateTimer, 1000);
+  updateTimer();
+
+  // Simple Decision Toggle behavior
+  const btnPass = document.getElementById('btn-pass');
+  const btnReject = document.getElementById('btn-reject');
+  const summaryBox = document.getElementById('decision-summary');
+
+  if (btnPass && btnReject && summaryBox) {
+    btnPass.addEventListener('click', () => {
+      btnPass.className = 'py-2.5 px-3 rounded-md bg-[#DCFCE7] text-[#15803D] font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm';
+      btnReject.className = 'py-2.5 px-3 rounded-md text-on-surface-variant hover:text-error hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all';
+      summaryBox.className = 'p-space-xs rounded bg-[#DCFCE7]/60 text-[#15803D] font-label-sm text-label-sm flex items-start gap-1.5';
+      summaryBox.innerHTML = '<span class="material-symbols-outlined text-[16px] flex-shrink-0 mt-0.5">verified_user</span><span>Instrument meets all 8 Schedule standards. Qualified for generation of Form VIII Verification Certificate.</span>';
+    });
+
+    btnReject.addEventListener('click', () => {
+      btnReject.className = 'py-2.5 px-3 rounded-md bg-error-container text-error font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm';
+      btnPass.className = 'py-2.5 px-3 rounded-md text-on-surface-variant hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all';
+      summaryBox.className = 'p-space-xs rounded bg-error-container text-error font-label-sm text-label-sm flex items-start gap-1.5';
+      summaryBox.innerHTML = '<span class="material-symbols-outlined text-[16px] flex-shrink-0 mt-0.5">warning</span><span>Notice of Rejection (Form IX) will be served immediately. Seizure memo initialized under Rule 28.</span>';
+    });
+  }
+
+  function renderLiveLmoConsole() {
+    if (document.getElementById('live-lmo-console')) return;
+    window.currentApplicationId = null;
+    const style = document.createElement('style');
+    style.textContent = '#live-lmo-console{border:1px solid #9db2c8;background:#fff;padding:18px;border-radius:8px;box-shadow:0 8px 22px rgba(15,41,66,.08)}#live-lmo-console .lmo-console-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px;align-items:end}#live-lmo-console label{display:flex;flex-direction:column;gap:5px;color:#314863;font:600 12px Public Sans,sans-serif}#live-lmo-console input,#live-lmo-console select{height:40px;border:1px solid #9db2c8;border-radius:4px;padding:0 10px;color:#0b1c30;background:#f8f9ff;font:14px Public Sans,sans-serif}#live-lmo-console .lmo-console-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}#live-lmo-console button{border:0;border-radius:4px;padding:9px 12px;background:#0f2942;color:#fff;font:700 12px Public Sans,sans-serif;cursor:pointer}#live-lmo-console button.secondary{background:#e5eeff;color:#0f2942}#live-lmo-console button.warn{background:#fd651e}#live-lmo-console .lmo-console-result{margin-top:12px;padding:10px;background:#eff4ff;border-radius:4px;color:#314863;font:13px Public Sans,sans-serif}#live-lmo-console .lmo-console-result.error{background:#ffdad6;color:#93000a}@media(max-width:900px){#live-lmo-console .lmo-console-grid{grid-template-columns:1fr}}';
+    document.head.appendChild(style);
+    const consolePanel = document.createElement('section');
+    consolePanel.id = 'live-lmo-console';
+    consolePanel.innerHTML = '<div style="display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap"><div><div style="font:700 12px Public Sans,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#74777e">Live LMO Operations</div><h2 style="margin:4px 0 2px;font:700 22px Public Sans,sans-serif;color:#001428">Submit a real field inspection</h2><div style="font:14px Public Sans,sans-serif;color:#43474d">This console uses your JWT, the registered shop coordinates, and the backend 200 m Haversine check.</div></div><button class="secondary" id="lmo-refresh-btn" type="button">Refresh applications</button></div><div class="lmo-console-grid" style="margin-top:16px"><label>Application<select id="lmo-application-select"><option value="">Loading applications...</option></select></label><label>Inspector latitude<input id="lmo-lat" type="number" step="0.000001" value="13.0827"></label><label>Inspector longitude<input id="lmo-lon" type="number" step="0.000001" value="80.2707"></label></div><div id="lmo-application-details" style="margin-top:10px;padding:10px;background:#eff4ff;border-radius:4px;color:#314863;font:13px Public Sans,sans-serif">Loading pending application details...</div><div class="lmo-console-actions"><button class="secondary" id="lmo-onsite-btn" type="button">On-site (0 m)</button><button class="secondary" id="lmo-boundary-btn" type="button">Near boundary (180 m)</button><button class="secondary" id="lmo-out-btn" type="button">Out of bounds (350 m)</button><button id="lmo-submit-pass" type="button">Submit PASS</button><button class="warn" id="lmo-submit-fail" type="button">Submit FAIL</button><button class="secondary" id="lmo-pdf-btn" type="button">Stream demo certificate PDF</button></div><div aria-live="polite" class="lmo-console-result" id="lmo-console-result">Sign in as an LMO or admin, then refresh applications.</div>';
+    document.querySelector('main > div > div').prepend(consolePanel);
+    const result = document.getElementById('lmo-console-result');
+    const select = document.getElementById('lmo-application-select');
+    const lat = document.getElementById('lmo-lat');
+    const lon = document.getElementById('lmo-lon');
+    let target = { latitude: 13.0827, longitude: 80.2707 };
+    let selectedApplication = null;
+    let applicationsCache = [];
+    const setCoordinates = (latitude, longitude, label) => {
+      lat.value = latitude;
+      lon.value = longitude;
+      window.demoGeoOverride = { latitude, longitude };
+      window.lmSandboxGps = { latitude, longitude };
+      const geoStatus = document.getElementById('geo-status');
+      if (geoStatus) geoStatus.textContent = label;
+      result.className = 'lmo-console-result';
+      result.textContent = `${label}: ${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+    };
+    const showResult = (message, error = false) => {
+      result.className = `lmo-console-result${error ? ' error' : ''}`;
+      result.textContent = message;
+    };
+    async function refreshApplications() {
+      if (!token()) { showResult('Authentication required. Open login.html and sign in with officer@example.com / Demo@123.', true); return; }
+      try {
+        const applications = await api('/v1/applications/pending');
+        applicationsCache = applications;
+        selectedApplication = applications[0] || null;
+        window.currentApplicationId = selectedApplication?.application_id || null;
+        target = selectedApplication ? { latitude: Number(selectedApplication.latitude), longitude: Number(selectedApplication.longitude) } : target;
+        select.innerHTML = applications.length ? applications.map(application => `<option value="${application.application_id}">${application.instrument_serial} | ${application.status} | ${application.premises_address}</option>`).join('') : '<option value="">No pending applications</option>';
+        const details = document.getElementById('lmo-application-details');
+        if (details) details.textContent = selectedApplication ? `${selectedApplication.trader_name} | ${selectedApplication.instrument_serial} | ${selectedApplication.capacity_kg} kg | Next due: ${selectedApplication.next_due_date}` : 'No pending application returned.';
+        if (selectedApplication) setCoordinates(target.latitude, target.longitude, 'On-site for selected shop');
+        showResult(applications.length ? `${applications.length} live application(s) loaded from the API.` : 'No applications found. Sign in as admin and use the developer seed route once.');
+      } catch (error) { showResult(error.message, true); }
+    }
+    async function submitLiveInspection(outcome) {
+      if (!select.value) { showResult('Choose an application first.', true); return; }
+      try {
+        const data = await api('/v1/lmo/inspections', { method: 'POST', body: { application_id: select.value, result: outcome, latitude: Number(lat.value), longitude: Number(lon.value), remarks: document.querySelector('textarea')?.value || 'Submitted from the live LMO portal.', readings: { checklist: '8/8' } } });
+        showResult(`${outcome} accepted by backend. Distance: ${data.distance_meters} m. Application status: ${data.application_status}.`);
+        await refreshApplications();
+      } catch (error) { showResult(error.message, true); }
+    }
+    async function streamDemoPdf() {
+      try {
+        const response = await api('/v1/staging/certificate.pdf');
+        const url = URL.createObjectURL(await response.blob());
+        const frame = document.createElement('iframe');
+        frame.title = 'Demo certificate PDF'; frame.src = url; frame.style = 'width:100%;height:600px;border:1px solid #9db2c8;margin-top:12px';
+        consolePanel.appendChild(frame); const pdfStatus = document.getElementById('pdf-status'); if (pdfStatus) pdfStatus.textContent = 'Ready'; showResult('Certificate PDF streamed from memory.');
+      } catch (error) { showResult(error.message, true); }
+    }
+    document.getElementById('lmo-refresh-btn').onclick = refreshApplications;
+    select.onchange = () => { const application = applicationsCache.find(item => item.application_id === select.value); if (application) { selectedApplication = application; window.currentApplicationId = application.application_id; target = { latitude: Number(application.latitude), longitude: Number(application.longitude) }; setCoordinates(target.latitude, target.longitude, 'On-site for selected shop'); } };
+    document.getElementById('lmo-onsite-btn').onclick = () => setCoordinates(target.latitude, target.longitude, 'On-site');
+    document.getElementById('lmo-boundary-btn').onclick = () => setCoordinates(target.latitude + 0.0015, target.longitude + 0.0005, 'Near boundary');
+    document.getElementById('lmo-out-btn').onclick = () => setCoordinates(target.latitude + 0.0032, target.longitude + 0.004, 'Out of bounds');
+    document.getElementById('lmo-submit-pass').onclick = () => submitLiveInspection('PASS');
+    document.getElementById('lmo-submit-fail').onclick = () => submitLiveInspection('FAIL');
+    document.getElementById('lmo-pdf-btn').onclick = streamDemoPdf;
+    refreshApplications();
+  }
+  document.addEventListener('DOMContentLoaded', renderLiveLmoConsole);
+</script></div></main></div><script src="app.js"></script>
+</body></html>

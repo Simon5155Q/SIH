@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGAL METROLOGY // CORE TELEMETRY COMMAND CENTER</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #000000;
+            color: #00ff66;
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        .header-bar {
+            border: 1px solid #00ff66;
+            background: #030d06;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .status-tag {
+            background: #00ff66;
+            color: #000000;
+            padding: 4px 10px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .panel {
+            background: #030a05;
+            border: 1px solid #00ff6655;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .panel-full {
+            grid-column: span 2;
+        }
+
+        .panel-title {
+            font-size: 0.95rem;
+            color: #66ffaa;
+            border-bottom: 1px solid #00ff6644;
+            padding-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: #000000;
+            color: #00ff66;
+            border: 1px solid #00ff66;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s ease;
+            flex: 1;
+            min-width: 140px;
+            text-align: left;
+        }
+
+        .action-btn:hover {
+            background: #00ff66;
+            color: #000000;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+        }
+
+        .action-btn.danger {
+            color: #ff3333;
+            border-color: #ff3333;
+        }
+
+        .action-btn.danger:hover {
+            background: #ff3333;
+            color: #000000;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+        }
+
+        .display-box {
+            background: #000000;
+            border: 1px dashed #00ff6644;
+            padding: 12px;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            min-height: 100px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        #terminalLog {
+            background: #000000;
+            border: 1px solid #00ff66;
+            padding: 16px;
+            height: 250px;
+            overflow-y: auto;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.1);
+        }
+
+        .log-row { margin-bottom: 4px; }
+        .text-bright { color: #00ff66; font-weight: bold; }
+        .text-dim { color: #008837; }
+        .text-alert { color: #ff3333; font-weight: bold; }
+
+        @media (max-width: 900px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .panel-full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">
+        <div class="header-title">LEGAL METROLOGY // SYSTEM VERIFICATION TELEMETRY</div>
+        <div class="status-tag">HOST: 127.0.0.1:8000</div>
+    </div>
+
+    <div class="grid-container">
+
+        <!-- 1. GEOFENCE PANEL -->
+        <div class="panel">
+            <div class="panel-title">[01] HAVERSINE GEO-FENCE DISTANCE ENGINE</div>
+            <div class="button-row">
+                <button class="action-btn" onclick="runGeo(13.08275, 80.27075, 'PASS (15m Radius)')">Pass: Within 15m</button>
+                <button class="action-btn" onclick="runGeo(13.08441, 80.27070, 'PASS (190m Edge)')">Pass: Perimeter Edge 190m</button>
+                <button class="action-btn danger" onclick="runGeo(12.97160, 77.59460, 'FAIL (50km Outside)')">Fail: Geo Breach 50km</button>
+            </div>
+            <div id="geoBox" class="display-box">> Awaiting coordinate input telemetry...</div>
+        </div>
+
+        <!-- 2. HMAC QR PANEL -->
+        <div class="panel">
+            <div class="panel-title">[02] HMAC-SHA256 QR SIGNATURE AUDITOR</div>
+            <div class="button-row">
+                <button class="action-btn" onclick="runCrypto(true)">Scan Valid Signed Token</button>
+                <button class="action-btn danger" onclick="runCrypto(false)">Scan Tampered Signature</button>
+            </div>
+            <div id="cryptoBox" class="display-box">> Awaiting token verification payload...</div>
+        </div>
+
+        <!-- 3. PDF GENERATOR PANEL -->
+        <div class="panel">
+            <div class="panel-title">[03] REPORTLAB CERTIFICATE COMPILER PIPELINE</div>
+            <div class="button-row">
+                <button class="action-btn" onclick="triggerPdf(1)">Compile Certificate #001 PDF</button>
+                <button class="action-btn" onclick="triggerPdf(999)">Compile Certificate #999 PDF</button>
+            </div>
+            <div id="pdfBox" class="display-box">> ReportLab canvas engine initialized. Ready to stream...</div>
+        </div>
+
+        <!-- 4. SECURITY SANITIZATION PANEL -->
+        <div class="panel">
+            <div class="panel-title">[04] ZERO-TRUST SQLi & XSS DEFENSE MATRIX</div>
+            <div class="button-row">
+                <button class="action-btn danger" onclick="runAttack()">Inject SQLi & XSS Vectors</button>
+            </div>
+            <div id="attackBox" class="display-box">> Parameterized query filters operating nominally.</div>
+        </div>
+
+        <!-- LIVE BUS TERMINAL -->
+        <div class="panel panel-full">
+            <div class="panel-title">[05] LIVE SYSTEM BUS TELEMETRY FEED</div>
+            <div id="terminalLog"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const API_BASE = "http://127.0.0.1:8000";
+
+        function logBus(msg, level = "ok") {
+            const term = document.getElementById("terminalLog");
+            const time = new Date().toISOString().split("T")[1].slice(0, 12);
+            const line = document.createElement("div");
+            line.className = "log-row";
+
+            let tag = `<span class="text-bright">[OK]</span>`;
+            if (level === "err") tag = `<span class="text-alert">[FAIL]</span>`;
+            if (level === "sys") tag = `<span class="text-dim">[BUS]</span>`;
+
+            line.innerHTML = `<span class="text-dim">[${time}]</span> ${tag} ${msg}`;
+            term.appendChild(line);
+            term.scrollTop = term.scrollHeight;
+        }
+
+        logBus("Control console ready. Targeting FastAPI backend at " + API_BASE, "sys");
+
+        async function runGeo(lat, lon, label) {
+            const box = document.getElementById("geoBox");
+            logBus(`[GEO] Evaluating officer position: (${lat}, ${lon}) vs Shop: (13.08270, 80.27070)`);
+            box.innerText = `[CALCULATING] Trigonometric Haversine Delta for vector ${label}...\nTransmitting payload to /inspections/sync-batch...`;
+
+            const payload = [{
+                local_id: "SYNC-" + Math.floor(Math.random() * 8999 + 1000),
+                instrument_serial: "WEIGH-SCALE-2026",
+                officer_lat: lat, officer_lon: lon,
+                shop_lat: 13.08270, shop_lon: 80.27070,
+                status: "PASS", inspected_at: new Date().toISOString()
+            }];
+
+            try {
+                const res = await fetch(`${API_BASE}/inspections/sync-batch`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.synced_count > 0) {
+                    box.innerHTML = `<span class="text-bright">[PERMITTED] Inspection Approved.</span>\nOfficer is inside the 200m perimeter.\nSynced IDs: ${data.synced_ids.join(', ')}`;
+                    logBus(`[GEO] Perimeter check APPROVED for ${label}`);
+                } else {
+                    box.innerHTML = `<span class="text-alert">[REJECTED] Geo-Fence Breach Detected!</span>\nReason: ${data.rejected[0].reason}`;
+                    logBus(`[GEO] Perimeter check REJECTED for ${label}`, "err");
+                }
+            } catch (e) {
+                box.innerHTML = `<span class="text-alert">[ERROR] Could not connect to API server.</span>`;
+                logBus(`[GEO] Connection failure to backend`, "err");
+            }
+        }
+
+        async function runCrypto(valid) {
+            const box = document.getElementById("cryptoBox");
+            let token = "eyJjaWQiOiAxLCAic24iOiAiV0VJR0gtMjAyNi1YIiwgInRzIjogIjIwMjYtMDktMDdUMTA6MDA6MDBaIiwgInNpZyI6ICI1NzMwMzdlMjkzNzI2MzAzMTU3ZGI5ODY4YTIxNzI4Yjk0NGFkNGJjNDVmMTE2NzEzMzBlMjZiNWQ5YWNlYWQxIn0=";
+            if (!valid) token = token.substring(0, token.length - 8) + "INVALID0";
+
+            logBus(`[CRYPTO] Verifying Base64 HMAC signature string...`);
+            box.innerText = `[PROCESSING] Base64 Decode -> Extract JSON -> Recompute HMAC-SHA256...\nToken: ${token.substring(0, 40)}...`;
+
+            try {
+                const res = await fetch(`${API_BASE}/certificates/verify/${encodeURIComponent(token)}`);
+                const data = await res.json();
+
+                if (res.ok && data.verified) {
+                    box.innerHTML = `<span class="text-bright">[VERIFIED] HMAC Signature Valid!</span>\nCertificate ID: ${data.certificate_id} | Serial: ${data.instrument_serial}\nIssued UTC: ${data.issued_at_utc}`;
+                    logBus(`[CRYPTO] Signature match confirmed for Cert #${data.certificate_id}`);
+                } else {
+                    box.innerHTML = `<span class="text-alert">[TAMPER DETECTED] Signature Mismatch!</span>\nHTTP 400: ${data.detail || 'Cryptographic hash validation failed.'}`;
+                    logBus(`[CRYPTO] Tampered token signature rejected.`, "err");
+                }
+            } catch (e) {
+                box.innerHTML = `<span class="text-alert">[ERROR] Request failed.</span>`;
+            }
+        }
+
+        function triggerPdf(id) {
+            const box = document.getElementById("pdfBox");
+            const url = `${API_BASE}/certificates/${id}/pdf`;
+            logBus(`[PDF] Requesting ReportLab compilation stream for Cert #${id}`);
+            box.innerHTML = `[COMPILING] Generating PDF stream with embedded HMAC QR code...\nTarget: ${url}`;
+            window.open(url, '_blank');
+        }
+
+        async function runAttack() {
+            const box = document.getElementById("attackBox");
+            logBus(`[SECURITY] Transmitting malicious SQLi & XSS strings...`, "sys");
+
+            const attackPayload = [{
+                local_id: "ATTACK-TEST",
+                instrument_serial: "SCALE-01'; DROP TABLE certificates; --",
+                officer_lat: 13.08271, officer_lon: 80.27071,
+                shop_lat: 13.08270, shop_lon: 80.27070,
+                status: "<script>alert('xss')</" + "script>",
+                inspected_at: new Date().toISOString()
+            }];
+
+            box.innerText = `[TESTING] Sending SQLi: "SCALE-01'; DROP TABLE certificates;--"\nSending XSS: "<script>alert('xss')</` + `script>"`;
+
+            try {
+                const res = await fetch(`${API_BASE}/inspections/sync-batch`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(attackPayload)
+                });
+                const data = await res.json();
+                box.innerHTML = `<span class="text-bright">[DEFENSE SUCCESSFUL] Attack Neutralized!</span>\nInput safely treated as literal plain text strings via ORM binding.\nDatabase intact. Synced ID: ${data.synced_ids.join(', ')}`;
+                logBus(`[SECURITY] SQLi and XSS inputs safely sanitized.`);
+            } catch (e) {
+                box.innerHTML = `<span class="text-alert">[ERROR] Request failed.</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

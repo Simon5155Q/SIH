@@ -1,0 +1,1012 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Legal Metrology Portal | Online Verification &amp; Certification System</title>
+<!-- Tailwind CSS v3 with Forms & Container-Queries Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Config -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            govNavy: '#0c2340',
+            govBlue: '#1a3a60',
+            govLightBlue: '#f0f5fa',
+            govAccent: '#c83820',
+            govAccentHover: '#a82c16',
+            govGold: '#d99726',
+            govBorder: '#e2e8f0',
+            govTextDark: '#1e293b',
+            govTextMuted: '#64748b',
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Phosphor Icons for Crisp Government Visuals -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/thin/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+<style data-purpose="custom-enhancements">
+    /* Subtle decorative patterns & hero backdrop */
+    .hero-pattern {
+      background-color: #0c2340;
+      background-image: radial-gradient(rgba(26, 58, 96, 0.7) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    .emblem-border {
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Modal transitions */
+    .modal-backdrop {
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-govTextDark font-sans antialiased min-h-screen flex flex-col">
+<!-- BEGIN: TopUtilityBar -->
+
+<!-- END: TopUtilityBar -->
+<!-- BEGIN: MainHeader -->
+<header class="bg-white border-b border-govBorder shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Emblem and Portal Branding -->
+<div class="flex items-center space-x-3.5">
+<div class="w-12 h-12 rounded-full bg-govNavy flex items-center justify-center text-govGold shadow-md border-2 border-amber-500/40">
+<i class="ph-fill ph-scales text-2xl"></i>
+</div>
+<div>
+
+<a class="block text-xl md:text-2xl font-black text-govNavy tracking-tight leading-tight" href="index.html">
+              Legal Metrology Portal
+            </a>
+<p class="text-[11px] md:text-xs text-govTextMuted font-medium tracking-normal -mt-0.5">
+              Online Verification &amp; Certification System (LM-OVCS)
+            </p>
+</div>
+</div>
+<!-- Desktop Navigation Links -->
+<nav aria-label="Primary Portal Navigation" class="hidden lg:flex items-center space-x-1 text-sm font-semibold text-slate-700">
+<a class="px-3 py-2 rounded-md text-govAccent bg-red-50/70 hover:bg-red-50 transition" href="index.html">Home</a>
+<a class="px-3 py-2 rounded-md hover:text-govNavy hover:bg-slate-100 transition" href="#workflow-section">How It Works</a>
+<a class="px-3 py-2 rounded-md hover:text-govNavy hover:bg-slate-100 transition" href="#quick-verification">Verify Certificate</a>
+<a class="px-3 py-2 rounded-md hover:text-govNavy hover:bg-slate-100 transition" href="#role-modules">Department Modules</a>
+<a class="px-3 py-2 rounded-md hover:text-govNavy hover:bg-slate-100 transition" href="#acts-regulations">Acts &amp; Schedule</a>
+</nav>
+<!-- Right Side Action Group -->
+<div class="hidden sm:flex items-center space-x-3">
+<button class="text-sm font-semibold text-govNavy hover:text-govAccent px-3 py-2 border border-slate-300 rounded-lg hover:border-govNavy transition flex items-center space-x-1.5" onclick="openLoginModal()" type="button">
+<i class="ph-bold ph-sign-in text-base"></i>
+<span class="">Portal Login</span>
+</button>
+<a class="text-sm font-semibold text-white bg-govAccent hover:bg-govAccentHover px-4 py-2.5 rounded-lg shadow-sm shadow-rose-200 transition flex items-center space-x-2" href="#workflow-section">
+<i class="ph-bold ph-plus-circle text-lg"></i>
+<span class="">Apply for Verification</span>
+</a>
+</div>
+<!-- Mobile Menu Toggle Button -->
+<div class="flex items-center lg:hidden space-x-2">
+<button class="text-xs font-bold text-govNavy px-2.5 py-1.5 border border-slate-300 rounded" onclick="openLoginModal()" type="button">
+            Login
+          </button>
+<button aria-label="Open Navigation Menu" class="p-2 rounded-lg text-govNavy hover:bg-slate-100 focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()" type="button">
+<i class="ph-bold ph-list text-2xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Drawer Navigation -->
+<div class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2" id="mobile-menu">
+<a class="block px-3 py-2 text-base font-semibold text-govAccent bg-red-50 rounded" href="index.html">Home</a>
+<a class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 rounded" href="#workflow-section" onclick="toggleMobileMenu()">How It Works</a>
+<a class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 rounded" href="#quick-verification" onclick="toggleMobileMenu()">Verify Certificate</a>
+<a class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 rounded" href="#role-modules" onclick="toggleMobileMenu()">Department Modules</a>
+<a class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-100 rounded" href="#acts-regulations" onclick="toggleMobileMenu()">Acts &amp; Standards</a>
+<div class="pt-3 border-t border-slate-200 flex flex-col space-y-2">
+<button class="w-full text-center py-2.5 text-govNavy font-semibold border border-slate-300 rounded-lg" onclick="openLoginModal(); toggleMobileMenu();" type="button">
+          Officer &amp; Citizen Sign In
+        </button>
+<a class="w-full text-center py-2.5 text-white bg-govAccent font-semibold rounded-lg" href="#workflow-section" onclick="toggleMobileMenu()">
+          Apply for Calibration/Stamping
+        </a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section aria-labelledby="hero-heading" class="relative bg-govNavy text-white hero-pattern overflow-hidden pt-12 pb-28 md:pt-16 md:pb-36">
+<!-- Visual background accent glow -->
+<div class="absolute inset-0 bg-gradient-to-r from-govNavy via-govNavy/90 to-govBlue/80 pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Text & Primary Calls-to-Action -->
+<div class="lg:col-span-8 space-y-6">
+<div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-xs font-semibold uppercase tracking-wider text-amber-300">
+<i class="ph-fill ph-shield-check text-base text-amber-400"></i>
+<span class="">Consumer Affairs &amp; Legal Metrology Department</span>
+</div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight md:leading-[1.15]" id="hero-heading">
+            Online Verification &amp; Certification for Weighing &amp; Measuring Instruments
+          </h1>
+<p class="text-base sm:text-lg md:text-xl text-slate-300 font-light max-w-3xl leading-relaxed">
+            The mandatory digital gateway for registration, periodic re-verification, calibration scheduling, and issuance of tamper-proof QR certificates under Legal Metrology Act &amp; Rules.
+          </p>
+<!-- Action buttons -->
+<div class="pt-2 flex flex-wrap gap-4 items-center">
+<a class="px-6 py-3.5 bg-govAccent hover:bg-govAccentHover text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition flex items-center space-x-2 text-base" href="#workflow-section">
+<span class="">Apply for New Verification</span>
+<i class="ph-bold ph-arrow-right"></i>
+</a>
+<a class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/25 backdrop-blur-sm transition flex items-center space-x-2 text-base" href="#quick-verification">
+<i class="ph-bold ph-magnifying-glass"></i>
+<span class="">Verify Existing Certificate</span>
+</a>
+</div>
+<!-- Trust Badges Under Buttons -->
+<div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-slate-300">
+<div class="flex items-center space-x-2">
+<i class="ph-bold ph-seal-check text-emerald-400 text-lg"></i>
+<span class="">Statutory Compliance Ensured</span>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ph-bold ph-lock-key text-blue-300 text-lg"></i>
+<span class="">Tamper-Proof Holographic QR</span>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ph-bold ph-lightning text-govGold text-lg"></i>
+<span class="">Real-Time Officer Dispatch</span>
+</div>
+</div>
+</div>
+<!-- Side Card: Quick Statistics Ticker -->
+<div class="lg:col-span-4">
+<div class="bg-white/95 text-govNavy backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/20">
+<div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Live Metrology Registry</span>
+<h2 class="text-base font-bold text-govNavy">State Performance Metric</h2>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-100 text-emerald-800">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                Active
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Stat Item 1 -->
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+<div class="text-2xl font-black text-govNavy">1,48,290+</div>
+<div class="text-xs font-medium text-slate-600 mt-0.5">Certified Scales &amp; Units</div>
+</div>
+<!-- Stat Item 2 -->
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+<div class="text-2xl font-black text-emerald-600">98.4%</div>
+<div class="text-xs font-medium text-slate-600 mt-0.5">Verification Compliance</div>
+</div>
+<!-- Stat Item 3 -->
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+<div class="text-2xl font-black text-govNavy">1,420</div>
+<div class="text-xs font-medium text-slate-600 mt-0.5">Enforcement Officers (LMO)</div>
+</div>
+<!-- Stat Item 4 -->
+<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+<div class="text-2xl font-black text-govNavy">312</div>
+<div class="text-xs font-medium text-slate-600 mt-0.5">Govt Approved Test Labs</div>
+</div>
+</div>
+<!-- Notice Banner in Card -->
+<div class="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs text-amber-900 flex items-start space-x-2">
+<i class="ph-fill ph-info text-amber-600 text-base mt-0.5 flex-shrink-0"></i>
+<span class=""><strong>Annual Renewal Notice:</strong> Stamping of commercial scales due for Q3 must be filed within 30 days of certificate expiry.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: QuickCategoryCards -->
+<!-- Overlapping Category Grid matching reference layout -->
+<section aria-label="Instrument Categories" class="relative z-20 -mt-16 sm:-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white rounded-xl shadow-xl border border-slate-200 p-4 sm:p-6 lg:p-8">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+<!-- Category 1 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#workflow-section">
+<div class="w-14 h-14 rounded-full bg-red-50 text-govAccent group-hover:bg-govAccent group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-scales"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-govAccent transition">
+            Commercial Weighing
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Class I, II, III &amp; IV Scales</span>
+</a>
+<!-- Category 2 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#workflow-section">
+<div class="w-14 h-14 rounded-full bg-blue-50 text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-gas-pump"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-govBlue transition">
+            Flow &amp; Fuel Meters
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Dispenser units &amp; Bulk flow</span>
+</a>
+<!-- Category 3 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#workflow-section">
+<div class="w-14 h-14 rounded-full bg-amber-50 text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-ruler"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-govGold transition">
+            Linear &amp; Dimensional
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Steel tapes, taximeters</span>
+</a>
+<!-- Category 4 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#workflow-section">
+<div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-truck"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-emerald-700 transition">
+            Weighbridges (Heavy)
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Axle &amp; Industrial Pit Weighers</span>
+</a>
+<!-- Category 5 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#workflow-section">
+<div class="w-14 h-14 rounded-full bg-purple-50 text-purple-700 group-hover:bg-purple-700 group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-package"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-purple-700 transition">
+            Pre-Packaged Goods
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Net content compliance PCR</span>
+</a>
+<!-- Category 6 -->
+<a class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-slate-50 transition group" href="#quick-verification">
+<div class="w-14 h-14 rounded-full bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white transition flex items-center justify-center text-2xl mb-3">
+<i class="ph-bold ph-magnifying-glass-plus"></i>
+</div>
+<span class="text-xs md:text-sm font-bold text-govNavy group-hover:text-rose-700 transition">
+            Certificate Lookup
+          </span>
+<span class="text-[11px] text-slate-500 mt-1">Verify Holographic Stamps</span>
+</a>
+</div>
+</div>
+</section>
+<!-- END: QuickCategoryCards -->
+<!-- BEGIN: InteractiveCertificateVerification -->
+<section aria-labelledby="verification-heading" class="py-16 md:py-20 bg-slate-100" id="quick-verification">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-10">
+<span class="text-xs font-bold uppercase tracking-wider text-govAccent bg-red-100/60 px-3 py-1 rounded-full border border-red-200">
+          Public Integrity &amp; Transparency
+        </span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-govNavy mt-3" id="verification-heading">
+          Instant Certificate &amp; Hologram Verification
+        </h2>
+<p class="text-slate-600 text-sm sm:text-base mt-2">
+          Verify the statutory authenticity of any weighing or measuring instrument stamped by the Legal Metrology Department or Accredited GATCs.
+        </p>
+</div>
+<!-- Search Box Container -->
+<div class="max-w-3xl mx-auto bg-white p-4 sm:p-6 rounded-2xl shadow-md border border-slate-200">
+<form class="space-y-4" onsubmit="handleCertificateSearch(event)">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="sm:col-span-2">
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="cert-number-input">
+                Certificate Number or Hologram UID
+              </label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<i class="ph-bold ph-identification-card text-lg"></i>
+</span>
+<input class="w-full pl-10 pr-3 py-2.5 text-sm rounded-lg border border-slate-300 focus:border-govNavy focus:ring-1 focus:ring-govNavy uppercase font-mono tracking-wide" id="cert-number-input" placeholder="e.g. LM-CERT-2026-000125" required="" type="text" value="LM-CERT-2026-000125">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="state-zone-select">
+                State / Jurisdiction
+              </label>
+<select class="w-full py-2.5 text-sm rounded-lg border border-slate-300 focus:border-govNavy focus:ring-1 focus:ring-govNavy bg-white text-slate-700" id="state-zone-select">
+<option value="ALL">All Jurisdictions</option>
+<option value="DEL">National Capital Region (NCR)</option>
+<option value="MAH">Maharashtra State</option>
+<option value="KAR">Karnataka State</option>
+<option value="GUJ">Gujarat State</option>
+<option value="TN">Tamil Nadu State</option>
+</select>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<div class="text-xs text-slate-500 flex items-center space-x-1.5">
+<i class="ph-bold ph-info text-blue-600"></i>
+<span class="">Try test serial: <code class="text-govAccent font-mono font-bold cursor-pointer underline" onclick="document.getElementById('cert-number-input').value='LM-CERT-2026-000125'">LM-CERT-2026-000125</code></span>
+</div>
+<div class="flex items-center space-x-2 w-full sm:w-auto">
+<button class="flex-1 sm:flex-initial px-4 py-2.5 text-xs font-bold text-govNavy bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-300 transition flex items-center justify-center space-x-1" onclick="simulateQRScan()" type="button">
+<i class="ph-bold ph-camera"></i>
+<span class="">Scan Stamped QR</span>
+</button>
+<button class="flex-1 sm:flex-initial px-6 py-2.5 text-sm font-bold text-white bg-govNavy hover:bg-govBlue rounded-lg shadow transition flex items-center justify-center space-x-1.5" type="submit">
+<i class="ph-bold ph-check-circle"></i>
+<span class="">Check Status</span>
+</button>
+</div>
+</div>
+</form>
+<!-- Simulated Search Result Card (Hidden by default, shown by JS) -->
+<div class="mt-6 pt-6 border-t border-slate-200 hidden" id="cert-result-box">
+<div class="bg-emerald-50/70 border border-emerald-300 rounded-xl p-4 sm:p-6 relative">
+<div class="flex flex-wrap justify-between items-start gap-4">
+<div class="flex items-start space-x-3.5">
+<div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow">
+<i class="ph-bold ph-seal-check"></i>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="bg-emerald-700 text-white text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                      VALID &amp; CERTIFIED
+                    </span>
+<span class="text-xs text-emerald-800 font-medium">Standard Verification Schedule Passed</span>
+</div>
+<h3 class="text-lg font-bold text-govNavy mt-1" id="res-cert-title">
+                    Digital Stamping Certificate #LM-CERT-2026-000125
+                  </h3>
+<p class="text-xs text-slate-600">Issued by Legal Metrology Department under Rule 11 of General Rules</p>
+</div>
+</div>
+<!-- Mini QR Simulation -->
+<div class="text-center p-2 bg-white rounded-lg border border-slate-200 shadow-sm">
+<div class="w-16 h-16 bg-slate-900 text-white flex flex-col items-center justify-center text-[10px] rounded p-1 font-mono leading-tight">
+<i class="ph-bold ph-qr-code text-2xl"></i>
+<span class="">SECURE-QR</span>
+</div>
+<span class="text-[10px] text-slate-500 font-semibold block mt-1">Geo-Tagged</span>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-emerald-200 text-xs">
+<div>
+<span class="text-slate-500 block">Instrument Category:</span>
+<strong class="text-govNavy font-semibold">Non-Automatic Counter Scale (Class III)</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Registered Entity:</span>
+<strong class="text-govNavy font-semibold">Apex Retailers Hub Pvt Ltd</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Calibration Date:</span>
+<strong class="text-govNavy font-semibold">14-Jan-2026</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Next Stamping Due:</span>
+<strong class="text-rose-700 font-bold">13-Jan-2027</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Verification Officer (LMO):</span>
+<strong class="text-govNavy font-semibold">Inspector R. K. Sharma (ID: LMO-982)</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Physical Stamp Mark:</span>
+<strong class="text-govNavy font-semibold">IND / 26 / DL / 04</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Accuracy Tolerance:</span>
+<strong class="text-emerald-800 font-semibold">± 0.05g (Passed 100%)</strong>
+</div>
+<div>
+<span class="text-slate-500 block">Digital Copy:</span>
+<button class="text-govAccent font-bold hover:underline flex items-center space-x-1" onclick="alert('Downloading digitally signed PDF certificate...')" type="button">
+<i class="ph-bold ph-file-pdf"></i>
+<span class="">Download PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: InteractiveCertificateVerification -->
+<!-- BEGIN: WorkflowStepperSection -->
+<section aria-labelledby="workflow-heading" class="py-16 md:py-20 bg-white" id="workflow-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-govNavy bg-slate-100 px-3 py-1 rounded border border-slate-200">
+            Standard Operating Procedure
+          </span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-govNavy mt-2" id="workflow-heading">
+            6-Stage Verification &amp; Calibration Lifecycle
+          </h2>
+<p class="text-slate-600 text-sm sm:text-base mt-1 max-w-2xl">
+            Streamlined statutory compliance flow for manufacturers, dealers, repairers, and commercial instrument users.
+          </p>
+</div>
+<div class="mt-4 md:mt-0">
+<a class="inline-flex items-center space-x-2 text-sm font-semibold text-govAccent hover:text-govAccentHover underline" href="index.html">
+<span class="">Download Form A &amp; Guidelines (PDF)</span>
+<i class="ph-bold ph-download-simple"></i>
+</a>
+</div>
+</div>
+<!-- 6-Step Visual Stepper -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 relative">
+<!-- Step 1 -->
+<div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative group hover:border-govNavy transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govNavy text-white flex items-center justify-center font-bold text-xs">01</span>
+<i class="ph-bold ph-user-circle-plus text-slate-400 text-xl group-hover:text-govAccent transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Instrument Registration</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Enlist make, serial number, model approval code, and maximum capacity rating.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 font-mono">
+            Step 1 of 6
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative group hover:border-govNavy transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govNavy text-white flex items-center justify-center font-bold text-xs">02</span>
+<i class="ph-bold ph-receipt text-slate-400 text-xl group-hover:text-govAccent transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Online Fee Payment</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Automated statutory fee computation according to instrument class schedule.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 font-mono">
+            BharatKosh / Treasury
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative group hover:border-govNavy transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govNavy text-white flex items-center justify-center font-bold text-xs">03</span>
+<i class="ph-bold ph-calendar-check text-slate-400 text-xl group-hover:text-govAccent transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Inspector / GATC Slot</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Automated algorithmic allocation of Legal Metrology Officer or accredited testing center.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 font-mono">
+            Slot Allotment
+          </div>
+</div>
+<!-- Step 4 -->
+<div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative group hover:border-govNavy transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govNavy text-white flex items-center justify-center font-bold text-xs">04</span>
+<i class="ph-bold ph-crosshair text-slate-400 text-xl group-hover:text-govAccent transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Physical Testing</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Standard weight comparison, sensitivity test, and error margin validation.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 font-mono">
+            Field / Lab Inspection
+          </div>
+</div>
+<!-- Step 5 -->
+<div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative group hover:border-govNavy transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govNavy text-white flex items-center justify-center font-bold text-xs">05</span>
+<i class="ph-bold ph-stamp text-slate-400 text-xl group-hover:text-govAccent transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Lead Seal &amp; Stamping</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Application of official security lead seal and tamper-evident holographic badge.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 font-mono">
+            Physical Security
+          </div>
+</div>
+<!-- Step 6 -->
+<div class="bg-red-50/50 rounded-xl p-4 border border-red-200 relative group hover:border-govAccent transition flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="w-8 h-8 rounded-full bg-govAccent text-white flex items-center justify-center font-bold text-xs">06</span>
+<i class="ph-bold ph-certificate text-govAccent text-xl transition"></i>
+</div>
+<h3 class="font-bold text-govNavy text-sm mb-1">Digital Certificate</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Immediate issuance of QR-enabled digital verification certificate stored in DigiLocker.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-red-200 text-[11px] text-govAccent font-bold">
+            Publicly Verifiable
+          </div>
+</div>
+</div>
+<!-- Action Box under workflow -->
+<div class="mt-10 bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-govNavy text-white flex items-center justify-center text-xl flex-shrink-0">
+<i class="ph-bold ph-file-text"></i>
+</div>
+<div>
+<h4 class="text-sm font-bold text-govNavy">Are you an instrument manufacturer or importer?</h4>
+<p class="text-xs text-slate-600">Model Approval (Section 22) must be obtained before applying for verification &amp; stamping.</p>
+</div>
+</div>
+<a class="whitespace-nowrap px-4 py-2 text-xs font-bold text-govNavy bg-white hover:bg-slate-100 rounded-lg border border-slate-300 transition" href="#role-modules">
+          Apply for Model Approval →
+        </a>
+</div>
+</div>
+</section>
+<!-- END: WorkflowStepperSection -->
+<!-- BEGIN: RoleBasedModules -->
+<section aria-labelledby="modules-heading" class="py-16 md:py-20 bg-govLightBlue/60 border-y border-slate-200" id="role-modules">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="text-xs font-bold uppercase tracking-wider text-govNavy bg-white px-3 py-1 rounded-full border border-slate-200">
+          Dedicated Subsystems
+        </span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-govNavy mt-3" id="modules-heading">
+          Role-Based Portal Workspaces
+        </h2>
+<p class="text-slate-600 text-sm sm:text-base mt-2">
+          Secure, authenticated access points for merchants, enforcement officers, accredited laboratories, and state administrators.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Module 1: Citizen & Commercial Entity -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-2xl mb-4">
+<i class="ph-bold ph-storefront"></i>
+</div>
+<h3 class="text-base font-bold text-govNavy">Commercial Traders &amp; Users</h3>
+<p class="text-xs text-slate-500 font-medium mt-1">Dealers, Petrol Pumps &amp; Industries</p>
+<ul class="mt-4 space-y-2 text-xs text-slate-600">
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Register new measuring devices</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Track renewal due dates</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Instant fee challan download</span>
+</li>
+</ul>
+</div>
+<button class="mt-6 w-full py-2 px-3 text-xs font-bold text-govNavy hover:text-white bg-slate-100 hover:bg-govNavy rounded-lg transition border border-slate-200" onclick="openLoginModal('Trader')" type="button">
+            Trader Portal Login →
+          </button>
+</div>
+<!-- Module 2: Legal Metrology Officer (LMO) -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-red-100 text-govAccent flex items-center justify-center text-2xl mb-4">
+<i class="ph-bold ph-shield-star"></i>
+</div>
+<h3 class="text-base font-bold text-govNavy">Enforcement Officers (LMO)</h3>
+<p class="text-xs text-slate-500 font-medium mt-1">Field Inspectors &amp; Regulators</p>
+<ul class="mt-4 space-y-2 text-xs text-slate-600">
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Field inspection job sheets</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Issue digital seizure memos</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Holographic QR stamp assignment</span>
+</li>
+</ul>
+</div>
+<button class="mt-6 w-full py-2 px-3 text-xs font-bold text-white bg-govAccent hover:bg-govAccentHover rounded-lg transition" onclick="openLoginModal('LMO')" type="button">
+            LMO Officer Login →
+          </button>
+</div>
+<!-- Module 3: GATC Testing Centers -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-2xl mb-4">
+<i class="ph-bold ph-flask"></i>
+</div>
+<h3 class="text-base font-bold text-govNavy">Accredited Test Labs (GATC)</h3>
+<p class="text-xs text-slate-500 font-medium mt-1">Govt-Approved Calibration Labs</p>
+<ul class="mt-4 space-y-2 text-xs text-slate-600">
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Upload raw calibration readings</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Reference standards audit logs</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Pre-verification certificates</span>
+</li>
+</ul>
+</div>
+<button class="mt-6 w-full py-2 px-3 text-xs font-bold text-govNavy hover:text-white bg-slate-100 hover:bg-govNavy rounded-lg transition border border-slate-200" onclick="openLoginModal('GATC')" type="button">
+            GATC Lab Portal →
+          </button>
+</div>
+<!-- Module 4: State Admin & Audit -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-slate-100 text-slate-800 flex items-center justify-center text-2xl mb-4">
+<i class="ph-bold ph-chart-line-up"></i>
+</div>
+<h3 class="text-base font-bold text-govNavy">State Controller &amp; Audit</h3>
+<p class="text-xs text-slate-500 font-medium mt-1">HQ Intelligence &amp; Oversight</p>
+<ul class="mt-4 space-y-2 text-xs text-slate-600">
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">District-wise revenue reconcile</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">Anti-fraud anomaly detection</span>
+</li>
+<li class="flex items-center space-x-2">
+<i class="ph-bold ph-check text-emerald-600"></i>
+<span class="">CAG compliance reporting</span>
+</li>
+</ul>
+</div>
+<button class="mt-6 w-full py-2 px-3 text-xs font-bold text-govNavy hover:text-white bg-slate-100 hover:bg-govNavy rounded-lg transition border border-slate-200" onclick="openLoginModal('Admin')" type="button">
+            Controller Admin →
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: RoleBasedModules -->
+<!-- BEGIN: ActsAndNotifications -->
+<section aria-labelledby="acts-heading" class="py-16 md:py-20 bg-white" id="acts-regulations">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Text & Acts Overview -->
+<div class="lg:col-span-6 space-y-4">
+<span class="text-xs font-bold uppercase tracking-wider text-govAccent bg-rose-50 px-2.5 py-1 rounded border border-rose-200">
+            Legal Framework
+          </span>
+<h2 class="text-2xl sm:text-3xl font-extrabold text-govNavy" id="acts-heading">
+            Enforced Under The Legal Metrology Act, 2009
+          </h2>
+<p class="text-slate-600 text-sm leading-relaxed">
+            Every instrument used in transaction, industrial measurement, or protection of human life is strictly governed under central statutory mandates. Unverified instruments are punishable by confiscation and statutory fines.
+          </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-start space-x-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
+<i class="ph-bold ph-article text-govNavy text-xl mt-0.5"></i>
+<div>
+<strong class="text-xs font-bold text-govNavy block">Section 24: Mandatory Verification &amp; Stamping</strong>
+<span class="text-xs text-slate-500">Every person possessing an unverified measuring tool for trade commits an offence under Section 33.</span>
+</div>
+</div>
+<div class="flex items-start space-x-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
+<i class="ph-bold ph-shield-check text-govNavy text-xl mt-0.5"></i>
+<div>
+<strong class="text-xs font-bold text-govNavy block">The Legal Metrology (General) Rules, 2011</strong>
+<span class="text-xs text-slate-500">Specifies precise maximum permissible error limits (MPE) and testing methodologies for classes I through IV.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Latest Gazette & Circulars List -->
+<div class="lg:col-span-6">
+<div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-slate-200">
+<h3 class="font-bold text-govNavy text-sm flex items-center space-x-2">
+<i class="ph-bold ph-bell-ringing text-govAccent"></i>
+<span class="">Recent Gazette Circulars &amp; Orders</span>
+</h3>
+<a class="text-xs text-govAccent font-bold hover:underline" href="index.html">View All</a>
+</div>
+<div class="text-xs py-6 text-center text-slate-500">
+<i class="ph-bold ph-newspaper text-2xl text-slate-300 block mb-2"></i>
+              No gazette circulars or orders published yet.
+            </div>
+<div class="mt-4 pt-3 border-t border-slate-200 text-center">
+<a class="text-xs font-bold text-govNavy hover:text-govAccent inline-flex items-center space-x-1" href="index.html">
+<span class="">Access Complete Legal Metrology Acts Archive</span>
+<i class="ph-bold ph-arrow-square-out"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ActsAndNotifications -->
+<!-- BEGIN: ReportViolationCTA -->
+<section aria-label="Consumer Protection" class="bg-govNavy text-white py-12 border-t border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-govBlue/70 border border-white/15 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 flex items-center justify-center text-3xl flex-shrink-0">
+<i class="ph-bold ph-warning-octagon"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white">Suspect Under-weighing or Broken Department Seals?</h3>
+<p class="text-sm text-slate-300 mt-1 max-w-xl">
+              Citizens are protected under consumer statutes. Register an anonymous complaint with geo-location tags for rapid officer dispatch.
+            </p>
+</div>
+</div>
+<div class="flex items-center space-x-3 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-6 py-3 bg-govAccent hover:bg-govAccentHover text-white text-sm font-bold rounded-lg transition shadow-md whitespace-nowrap" onclick="alert('Opening Citizens Grievance &amp; Enforcement Lodgement Form...')" type="button">
+            Lodge Consumer Complaint
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ReportViolationCTA -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-[#081726] text-slate-300 text-xs border-t border-white/10 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<!-- Col 1: Government Identity -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-govNavy flex items-center justify-center text-govGold border border-amber-400/30">
+<i class="ph-fill ph-scales text-xl"></i>
+</div>
+<div>
+<span class="font-bold text-sm text-white block">Legal Metrology Portal (LM-OVCS)</span>
+<span class="text-[11px] text-slate-400">Ministry of Consumer Affairs, Food &amp; Public Distribution</span>
+</div>
+</div>
+<p class="text-slate-400 leading-relaxed text-xs pr-4">
+            Designed to bring absolute fidelity, fair competition, and digital auditability to all commercial measurement instruments in accordance with national legal metrology standards.
+          </p>
+<div class="text-slate-400 text-[11px]">
+            Technical Infrastructure hosted by <strong>National Informatics Center (NIC) Cloud</strong>
+</div>
+</div>
+<!-- Col 2: Services -->
+<div class="space-y-2.5">
+<h4 class="text-white font-bold text-sm mb-3">Public Services</h4>
+<ul class="space-y-2">
+<li class=""><a class="hover:text-white transition" href="#quick-verification">Verify QR Certificate</a></li>
+<li class=""><a class="hover:text-white transition" href="#workflow-section">Apply for Stamping</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">Fee Calculator Matrix</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">GATC Lab Locator</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">Model Approval Status</a></li>
+</ul>
+</div>
+<!-- Col 3: Legal & Standards -->
+<div class="space-y-2.5">
+<h4 class="text-white font-bold text-sm mb-3">Statutory &amp; Acts</h4>
+<ul class="space-y-2">
+<li class=""><a class="hover:text-white transition" href="index.html">Legal Metrology Act, 2009</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">General Rules, 2011</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">Packaged Commodities Rules</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">Schedule of Prescribed Fees</a></li>
+<li class=""><a class="hover:text-white transition" href="index.html">State Enforcement Circulars</a></li>
+</ul>
+</div>
+<!-- Col 4: Help & Contact -->
+<div class="space-y-2.5">
+<h4 class="text-white font-bold text-sm mb-3">Department Contact</h4>
+<p class="text-slate-400">Directorate of Legal Metrology<br>Krishi Bhawan, New Delhi - 110001</p>
+<div class="pt-1">
+<span class="text-slate-400 block">Toll-Free Consumer Line:</span>
+<span class="text-white font-bold">1800-11-4000</span>
+</div>
+<div class="pt-1">
+<span class="text-slate-400 block">Technical Support:</span>
+<span class="text-white font-mono">support-metrology@gov.in</span>
+</div>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-slate-400 text-[11px] gap-4">
+<div class="">
+          © 2026 Directorate of Legal Metrology. All Rights Reserved. Content Owned &amp; Maintained by Central Metrology Authority.
+        </div>
+<div class="flex items-center space-x-4">
+<a class="hover:text-white transition" href="index.html">Terms &amp; Conditions</a>
+<span class="">|</span>
+<a class="hover:text-white transition" href="index.html">Privacy Policy</a>
+<span class="">|</span>
+<a class="hover:text-white transition" href="index.html">Hyperlink Policy</a>
+<span class="">|</span>
+<a class="hover:text-white transition" href="index.html">Security Audit Certified</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: LoginModal -->
+<div class="fixed inset-0 z-50 hidden modal-backdrop bg-govNavy/70 flex items-center justify-center p-4" id="login-modal">
+<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-200">
+<!-- Modal Header -->
+<div class="bg-govNavy text-white p-5 flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<i class="ph-fill ph-lock-key text-govGold text-2xl"></i>
+<div>
+<h3 class="font-bold text-base leading-tight">Unified Metrology Sign-In</h3>
+<p class="text-xs text-slate-300">Single Sign-On for Stakeholders</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="text-slate-300 hover:text-white p-1 rounded" onclick="closeLoginModal()" type="button">
+<i class="ph-bold ph-x text-xl"></i>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">Select Access Role</label>
+<div class="grid grid-cols-2 gap-2" id="modal-role-selector">
+<button class="role-chip py-2 px-3 text-xs font-bold rounded-lg border border-govNavy bg-govLightBlue text-govNavy text-center" onclick="selectLoginRole(this, 'Trader')" type="button">
+              Trader / Business
+            </button>
+<button class="role-chip py-2 px-3 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 text-center" onclick="selectLoginRole(this, 'LMO')" type="button">
+              LMO Officer
+            </button>
+<button class="role-chip py-2 px-3 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 text-center" onclick="selectLoginRole(this, 'GATC')" type="button">
+              GATC Lab
+            </button>
+<button class="role-chip py-2 px-3 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 text-center" onclick="selectLoginRole(this, 'Admin')" type="button">
+              HQ Administration
+            </button>
+</div>
+</div>
+<form class="space-y-3" onsubmit="handleLoginSubmit(event)">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1" for="modal-username">
+              User ID / Parivahan / GSTIN / Officer Badge #
+            </label>
+<input class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-govNavy focus:ring-1 focus:ring-govNavy" id="modal-username" placeholder="e.g. TRD-8821034" required="" type="text">
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block text-xs font-semibold text-slate-700" for="modal-password">Security Password</label>
+<a class="text-[11px] text-govAccent hover:underline" href="index.html">Forgot password?</a>
+</div>
+<input class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-govNavy focus:ring-1 focus:ring-govNavy" id="modal-password" placeholder="••••••••" required="" type="password">
+</div>
+<!-- Captcha Simulation -->
+<div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="font-mono font-bold tracking-widest text-slate-800 text-sm bg-white px-3 py-1 rounded border border-slate-300 line-through select-none">
+                7 K M 9 Q
+              </span>
+<button class="text-slate-500 hover:text-govNavy" title="Refresh Captcha" type="button">
+<i class="ph-bold ph-arrows-clockwise text-base"></i>
+</button>
+</div>
+<input class="w-24 px-2 py-1 text-xs border border-slate-300 rounded uppercase font-mono" placeholder="Enter code" required="" type="text">
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 px-4 bg-govNavy hover:bg-govBlue text-white font-bold text-sm rounded-lg transition shadow" type="submit">
+              Proceed to Secure Portal
+            </button>
+</div>
+</form>
+<div class="text-center pt-2 text-xs text-slate-500">
+          New commercial instrument owner? <a class="text-govAccent font-bold hover:underline" href="#workflow-section" onclick="closeLoginModal()">Register your unit here</a>
+</div>
+</div>
+</div>
+</div>
+<!-- END: LoginModal -->
+<!-- BEGIN: GrievanceBannerToast -->
+<div class="fixed bottom-4 right-4 z-50 hidden max-w-sm bg-white rounded-xl shadow-2xl border-2 border-amber-400 p-4 animate-in slide-in-from-bottom" id="grievance-toast">
+<div class="flex items-start space-x-3">
+<i class="ph-fill ph-warning text-amber-500 text-2xl flex-shrink-0 mt-0.5"></i>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-govNavy">Consumer Vigilance Wing</h4>
+<p class="text-xs text-slate-600 mt-1">Found inaccurate weights in your local market? Report directly with location &amp; photos to regional LMO.</p>
+<div class="mt-3 flex items-center space-x-2">
+<button class="text-xs bg-amber-500 hover:bg-amber-600 text-govNavy font-bold px-3 py-1.5 rounded" onclick="alert('Redirecting to Grievance Ticketing Desk...'); toggleGrievanceBanner();" type="button">
+            File Complaint
+          </button>
+<button class="text-xs text-slate-500 hover:text-slate-800 px-2 py-1.5" onclick="toggleGrievanceBanner()" type="button">
+            Dismiss
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: GrievanceBannerToast -->
+<!-- BEGIN: InteractiveHandlers -->
+<script data-purpose="portal-interactivity">
+    // Mobile navigation toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Login modal handling
+    function openLoginModal(roleName) {
+      const modal = document.getElementById('login-modal');
+      modal.classList.remove('hidden');
+      if (roleName) {
+        const chips = document.querySelectorAll('#modal-role-selector button');
+        chips.forEach(chip => {
+          if (chip.textContent.trim().toLowerCase().includes(roleName.toLowerCase())) {
+            selectLoginRole(chip, roleName);
+          }
+        });
+      }
+    }
+
+    function closeLoginModal() {
+      const modal = document.getElementById('login-modal');
+      modal.classList.add('hidden');
+    }
+
+    function selectLoginRole(btn, role) {
+      const chips = document.querySelectorAll('#modal-role-selector button');
+      chips.forEach(c => {
+        c.className = 'role-chip py-2 px-3 text-xs font-bold rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 text-center';
+      });
+      btn.className = 'role-chip py-2 px-3 text-xs font-bold rounded-lg border border-govNavy bg-govLightBlue text-govNavy text-center';
+    }
+
+    function handleLoginSubmit(event) {
+      event.preventDefault();
+      handleApiLoginSubmit(event);
+    }
+
+    // Public certificate lookup simulator
+    function handleCertificateSearch(event) {
+      event.preventDefault();
+      const certInput = document.getElementById('cert-number-input').value.trim();
+      const resultBox = document.getElementById('cert-result-box');
+      const titleElem = document.getElementById('res-cert-title');
+
+      if (!certInput) return;
+
+      // Update and reveal certificate box
+      titleElem.textContent = `Digital Stamping Certificate #${certInput.toUpperCase()}`;
+      resultBox.classList.remove('hidden');
+
+      // Scroll smoothly to results
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function simulateQRScan() {
+      const sampleCert = 'LM-CERT-2026-000125';
+      document.getElementById('cert-number-input').value = sampleCert;
+      handleCertificateSearch(new Event('submit'));
+    }
+
+    // Grievance banner toggle
+    function toggleGrievanceBanner() {
+      const banner = document.getElementById('grievance-toast');
+      banner.classList.toggle('hidden');
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLoginModal();
+      }
+    });
+  </script>
+<!-- END: InteractiveHandlers -->
+
+
+<script src="app.js"></script>
+</body></html>

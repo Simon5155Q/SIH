@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#00174b", "inverse-surface": "#213145", "on-surface-variant": "#43474d", "on-primary-container": "#7991af", "primary": "#001428", "on-error-container": "#93000a", "tertiary-fixed-dim": "#b4c5ff", "secondary-fixed-dim": "#ffb599", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "surface-container-highest": "#d3e4fe", "on-primary-fixed-variant": "#314863", "on-tertiary": "#ffffff", "surface-tint": "#49607c", "on-secondary-container": "#571a00", "on-secondary": "#ffffff", "primary-container": "#0f2942", "outline": "#74777e", "primary-fixed-dim": "#b0c9e8", "on-surface": "#0b1c30", "on-primary-fixed": "#011d35", "tertiary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#7f2b00", "inverse-primary": "#b0c9e8", "surface-dim": "#cbdbf5", "on-background": "#0b1c30", "secondary": "#a73a00", "outline-variant": "#c3c6ce", "surface-container-high": "#dce9ff", "secondary-fixed": "#ffdbce", "on-error": "#ffffff", "surface-variant": "#d3e4fe", "on-tertiary-fixed-variant": "#003ea8", "tertiary-container": "#002265", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-bright": "#f8f9ff", "primary-fixed": "#d1e4ff", "inverse-on-surface": "#eaf1ff", "secondary-container": "#fd651e", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "on-secondary-fixed": "#370e00", "error-container": "#ffdad6", "on-tertiary-container": "#5d88ff", "tertiary": "#001039" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "container-max": "1280px", "space-2xl": "3rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "space-3xl": "4rem", "space-2xs": "0.25rem" }, fontFamily: { "display": ["Public Sans"], "body-sm": ["Public Sans"], "label-lg": ["Public Sans"], "headline-lg": ["Public Sans"], "body-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-lg": ["Public Sans"], "headline-sm": ["Public Sans"], "label-md": ["Public Sans"], "headline-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"] }, fontSize: { "display": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.025em", fontWeight: "600" }], "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }], "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[1px_0_10px_rgba(15,41,66,0.04)]"><div class="flex flex-col"><div class="px-space-md pb-space-md border-b border-surface-container-high flex items-center gap-space-sm"><div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[24px]">balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">LM-OVCS</span><span class="font-label-sm text-label-sm text-outline">Operational Hub</span></div></div><div class="p-space-md"><div class="bg-surface-container-highest p-space-sm rounded mb-space-md"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">Session Role</span><span class="px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>Active</span></div><div class="font-label-lg text-label-lg text-primary mt-1">Senior Field Inspector</div><div class="font-label-sm text-label-sm text-on-surface-variant">Zone 4 - Industrial Weights</div></div><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-xs mb-space-xs block">Navigation Console</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded"><a aria-current="page" class="flex items-center px-space-sm py-2 transition-all bg-primary-container text-on-primary font-label-lg text-label-lg rounded" data-path="user-dashboard" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">grid_view</span>User Dashboard</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="lmo-portal" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">verified_user</span>LMO Portal</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="admin-console" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">admin_panel_settings</span>Admin Console</a><a class="flex items-center px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-all" data-path="verify-certificate" href="index.html"><span class="material-symbols-outlined mr-space-sm text-[20px]">search_check</span>Verify Certificate</a></nav></div></div><div class="px-space-md flex flex-col gap-space-xs border-t border-surface-container-high pt-space-md"><div class="flex items-center justify-between font-label-sm text-label-sm text-outline"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Secured Session</span><span>TLS 1.3</span></div><a class="flex items-center text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm py-1" data-path="home" href="index.html"><span class="material-symbols-outlined mr-1 text-[16px]">arrow_back</span>Back to Public Portal</a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_6px_rgba(15,41,66,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-xs text-[18px] text-outline">search</span><input class="h-10 pl-8 pr- space-sm py-1 font-body-sm text-body-sm bg-surface-container-low rounded border border-outline-variant/60 focus:outline-none focus:border-primary w-80 text-on-surface" placeholder="Search registry, cases, certificates (Ctrl+/)..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-high rounded text-primary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">domain</span>National Weights &amp; Measures Node #09</div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high relative transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Audit Log" class="w-10 h-10 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"><span class="material-symbols-outlined text-[20px]">history</span></button><div class="h-6 w-[1px] bg-outline-variant/40 mx-1"></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm font-semibold text-primary leading-none">Insp. K. Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">Central Division</span></div></div></div></header><main class="relative pt-16 bg-surface"><div class="w-full px-space-lg py-space-lg min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP CONTEXT BANNER / ENTITY PROFILE HEADER -->
+<div class="relative w-full rounded-xl bg-surface-container-lowest p-space-lg shadow-sm overflow-hidden flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-surface-container-high/60 pointer-events-none blur-2xl"></div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md z-10">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[32px]">storefront</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Welcome, Apex Retailers Pvt Ltd</span>
+<span class="px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>98% Good Standing
+          </span>
+</div>
+<div class="flex items-center gap-x-space-md gap-y-1 mt-1 text-on-surface-variant font-body-sm text-body-sm flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">badge</span>
+            CIN: <span class="font-label-md text-label-md text-on-surface">U74999DL2018PTC</span>
+</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            Jurisdiction: <span class="font-label-md text-label-md text-on-surface">District Central (Zone 04)</span>
+</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">verified</span>
+            Legal Metrology Portal UID: <span class="font-label-md text-label-md text-on-surface">LMO-DL-2024-9982</span>
+</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 z-10">
+<button class="h-10 px-4 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-lg text-label-lg transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+        Legal Profile
+      </button>
+<button class="h-10 px-4 rounded bg-secondary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        New Verification
+      </button>
+</div>
+</div>
+<!-- STATUTORY NOTICE / URGENT STAMPING ACTION BANNER -->
+<div class="relative w-full rounded-xl bg-gradient-to-r from-secondary-container to-secondary text-on-secondary p-space-md sm:p-space-lg shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md z-10 max-w-4xl">
+<div class="w-12 h-12 rounded-lg bg-on-secondary/15 flex items-center justify-center shrink-0 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[28px] text-on-secondary">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="uppercase tracking-widest text-[11px] font-label-sm px-2 py-0.5 rounded bg-on-secondary/20 text-on-secondary font-bold">Statutory Alert</span>
+<span class="text-on-secondary/90 font-label-sm text-label-sm">Sec 24 Legal Metrology Act 2009</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-secondary mt-0.5">
+          Stamping Due Notice: 2 Instruments Require Mandatory Re-verification
+        </div>
+<p class="font-body-sm text-body-sm text-on-secondary/90 mt-1">
+          Quarterly grace cycle expires on <strong>28 February 2026</strong>. Late renewals incur an administrative compounding fee of ₹5,000 per instrument plus daily accrued penalties.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 z-10 self-end md:self-center">
+<button class="h-11 px-5 rounded bg-surface-container-lowest text-secondary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all flex items-center gap-2 font-bold">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+        Apply for Re-verification
+      </button>
+</div>
+</div>
+<!-- TOP KPI METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Registered Instruments</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">18</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">scale</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5 font-semibold text-primary">
+<span class="w-2 h-2 rounded-full bg-[#16A34A]"></span>16 Fully Active
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-container font-medium">
+          2 In Transit / Insp
+        </span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pending Applications</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">03</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5 font-semibold text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>1 Scheduled This Week
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary-container font-medium">
+          2 Under Review
+        </span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Digital Certificates</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight mt-1">16</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-[#15803D] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>100% Tamper Proof
+        </span>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary font-label-sm text-label-sm flex items-center gap-1 font-semibold transition-all">
+<span class="material-symbols-outlined text-[14px]">download</span>Bulk ZIP
+        </button>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error">Expiring (&lt;30 Days)</span>
+<span class="font-headline-lg text-headline-lg text-error tracking-tight mt-1">02</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">schedule</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>Re-stamping Mandate
+        </span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">
+          Act Immediately
+        </span>
+</div>
+</div>
+</div>
+<!-- QUICK TOOLS / REGULATORY ACTIONS TILE ROW -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">add_box</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Register New Instrument</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class I to IV weighing balances &amp; flow meters</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">chevron_right</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">file_download</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Download Bulk Certificates</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Digitally signed Schedule XI verification seals</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">chevron_right</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">calculate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Calculate Statutory Fees</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standard fee schedule according to State gazette</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">chevron_right</span>
+</div>
+</div>
+<!-- MAIN OPERATIONAL WORKSPACE: RECENT APPLICATIONS & VERIFICATION SCHEDULE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: RECENT APPLICATIONS TABLE (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Verification &amp; Stamping Applications</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active statutory tracking for all business equipment</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>Filter
+            </button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">refresh</span>Refresh
+            </button>
+</div>
+</div>
+<!-- APPLICATIONS DATA TABLE -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[760px]">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l">App ID</th>
+<th class="py-3 px-4">Instrument / Spec</th>
+<th class="py-3 px-4">Submitted</th>
+<th class="py-3 px-4">Schedule Date</th>
+<th class="py-3 px-4">Assigned Authority</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 rounded-r text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+</tbody>
+</table>
+<!-- Empty State: no applications submitted yet -->
+<div class="flex flex-col items-center justify-center text-center py-space-2xl px-space-md">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-space-sm">
+<span class="material-symbols-outlined text-[26px]">assignment</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold">No verification or stamping applications yet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-sm">
+          Applications you submit for instrument registration, calibration, and re-verification will be tracked here.
+        </p>
+<button class="mt-space-sm px-4 py-2 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+          Start New Verification
+        </button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Showing 0 of 0 Total Statutory Records</span>
+</div>
+</div>
+<!-- INSTRUMENT COMPLIANCE STATUS METRIC GRID -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Fleet Calibration Health &amp; Compliance Vector</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Breakdown of active operational assets across warehouse hubs</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Updated: 08 Feb 2026, 09:45 AM IST</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-outline">Category Class I &amp; II (Lab / Fine)</span>
+<span class="font-headline-md text-headline-md text-primary">04 Units</span>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-[#16A34A] w-[100%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-[#15803D] mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>All certified valid
+            </span>
+</div>
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-outline">Category Class III (Commercial POS)</span>
+<span class="font-headline-md text-headline-md text-primary">11 Units</span>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-secondary w-[82%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>2 units require restamping
+            </span>
+</div>
+<div class="p-space-md rounded bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-outline">Category Class IV &amp; Heavy Flow</span>
+<span class="font-headline-md text-headline-md text-primary">03 Units</span>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-[#16A34A] w-[100%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-[#15803D] mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>1 scheduled for field test
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: SCHEDULE CARD & VERIFICATION READINESS CHECKLIST (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- UPCOMING VERIFICATION SCHEDULE CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">event</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">Upcoming Audit</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">
+            CONFIRMED
+          </span>
+</div>
+<div class="bg-primary text-on-primary rounded-lg p-space-md flex flex-col gap-space-xs shadow-inner">
+<span class="font-label-sm text-label-sm text-on-primary/70 uppercase tracking-widest">Inspection Session Date</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold">12 Feb</span>
+<span class="font-headline-sm text-headline-sm font-normal text-on-primary/80">2026</span>
+</div>
+<span class="font-label-md text-label-md text-on-primary/90 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+            Window: 10:30 AM – 01:30 PM IST
+          </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Assigned Inspector Details</span>
+<div class="flex items-center gap-space-sm p-space-xs rounded bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Insp. Rajesh K. Vance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Badge: LMO-ZONE4-DL-088</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Site Location &amp; Instrument</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Apex Logistics Terminal #3</strong>, Plot 42, Okhla Industrial Area Ph-III, New Delhi 110020
+          </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Target Unit: Electronic Weighbridge 60T (Serial: AWT-2022-9021)
+          </p>
+</div>
+<!-- STATUTORY PRE-VISIT CHECKLIST -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Mandatory Readiness Checklist</span>
+<div class="space-y-2">
+<label class="flex items-start gap-space-xs text-on-surface font-body-sm text-body-sm cursor-pointer select-none">
+<input checked="" class="mt-1 h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span>Standard test weights (20T certified dead weights) mobilized at pit site</span>
+</label>
+<label class="flex items-start gap-space-xs text-on-surface font-body-sm text-body-sm cursor-pointer select-none">
+<input checked="" class="mt-1 h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span>Previous year Schedule XI Certificate &amp; Original Invoice readily printed</span>
+</label>
+<label class="flex items-start gap-space-xs text-on-surface font-body-sm text-body-sm cursor-pointer select-none">
+<input class="mt-1 h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span>Authorized technical engineer &amp; facility manager present on premise</span>
+</label>
+<label class="flex items-start gap-space-xs text-on-surface font-body-sm text-body-sm cursor-pointer select-none">
+<input class="mt-1 h-4 w-4 rounded accent-primary text-on-primary" type="checkbox"/>
+<span>Online fee challan receipt counter-foil signed (Challan #CH-88219-DL)</span>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="w-full h-10 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+            Reschedule Request
+          </button>
+<button class="w-full h-10 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">print</span>
+            Gate Pass
+          </button>
+</div>
+</div>
+<!-- DIGITAL SECURITY & COMPLIANCE QUICK CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+<span class="font-headline-sm text-headline-sm">Instant Public QR Verification</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Your retail scales have an encoded cryptographic QR seal that allows consumer patrons to scan and verify authentic governmental stamping on the spot.
+        </p>
+<div class="p-space-sm rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Public Portal URL</span>
+<span class="font-mono text-label-sm text-primary">gov.in/verify?uid=LMO-9982</span>
+</div>
+<button class="p-2 rounded bg-surface-container hover:bg-surface-container-high text-primary transition-all" title="Copy URL">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></div></main></div><script src="app.js"></script>
+</body></html>

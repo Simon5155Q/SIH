@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>e-Verify Sign In</title>
+  <style>
+    :root{font-family:Public Sans,system-ui,sans-serif;color:#10243a;background:#eff4ff}body{min-height:100vh;display:grid;place-items:center;margin:0;padding:20px}.card{width:min(430px,100%);background:#fff;border:1px solid #c3c6ce;border-radius:12px;padding:30px;box-shadow:0 16px 40px #0f29421c}h1{margin:0 0 8px;font-size:28px}p{color:#596b7e;line-height:1.5}label{display:block;margin-top:18px;font-weight:600;font-size:14px}input{width:100%;box-sizing:border-box;margin-top:7px;padding:12px;border:1px solid #9aa7b5;border-radius:6px;font-size:15px}button{margin-top:18px;border:0;border-radius:6px;padding:11px 15px;background:#0f2942;color:#fff;font-weight:700;cursor:pointer}button.secondary{margin-left:8px;background:#fd651e}#message{min-height:24px;margin-top:16px;color:#a73a00;font-size:14px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>e-Verify Portal</h1>
+    <p>Sign in with your account or request a one-time email code.</p>
+    <form onsubmit="handleApiLoginSubmit(event)">
+      <label for="modal-username">Email</label>
+      <input id="modal-username" type="email" autocomplete="username" required placeholder="trader@example.com">
+      <label for="modal-password">Password</label>
+      <input id="modal-password" type="password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+      <button class="secondary" type="button" onclick="sendLoginOtp()">Send OTP</button>
+    </form>
+    <div id="otp-area" hidden>
+      <label for="login-otp">Email OTP</label>
+      <input id="login-otp" inputmode="numeric" maxlength="6" placeholder="6-digit code">
+      <button type="button" onclick="verifyLoginOtp()">Verify OTP</button>
+    </div>
+    <div id="message" role="status"></div>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    async function sendLoginOtp(){try{const email=document.getElementById('modal-username').value.trim();const result=await api('/v1/auth/send-otp',{method:'POST',body:{email}});document.getElementById('otp-area').hidden=false;document.getElementById('message').textContent=result.dev_otp?`Development OTP: ${result.dev_otp}`:result.message}catch(e){document.getElementById('message').textContent=e.message}}
+    async function verifyLoginOtp(){try{const email=document.getElementById('modal-username').value.trim();const otp=document.getElementById('login-otp').value.trim();const result=await api('/v1/auth/verify-otp',{method:'POST',body:{email,otp}});localStorage.setItem('token',result.access_token);localStorage.setItem('lm_token',result.access_token);localStorage.setItem('lm_user',JSON.stringify(result.user));location.href=result.user.role==='ADMIN'?'admin.html':result.user.role==='TRADER'?'merchant.html':'lmo.html'}catch(e){showAuthError(e.status===401?'Authentication failed. The OTP is invalid or expired.':e.message)}}
+  </script>
+</body>
+</html>

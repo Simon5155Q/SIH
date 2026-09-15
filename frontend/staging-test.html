@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>e-Verify Staging Test Portal</title>
+  <style>
+    :root{--gov-navy:#0d2d4f;--gov-gold:#d5a85a;--gov-silver:#e9eef5;--panel:#f6f8fb;--border:#d6dfe9;--green:#1f8b55;--amber:#b9770e;--danger:#b42318;--shadow:0 18px 45px rgba(13,45,79,.18)}
+    *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#eef3f9,#f9fbfe);color:#132a3d}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 28px;background:linear-gradient(90deg,#0d2d4f,#153f69);color:#fff;box-shadow:0 8px 24px rgba(13,45,79,.18)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}.seal{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#d5a85a,#f3d58c);color:#0d2d4f;font-weight:900}.sub{font-size:11px;letter-spacing:.08em;opacity:.85}.header-actions{display:flex;align-items:center;gap:10px}
+    .rolechip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:12px;font-weight:700}
+    .auth-btn{border:1px solid rgba(255,255,255,.2);background:#fff;color:#0d2d4f;padding:8px 12px;border-radius:6px;font-weight:700;cursor:pointer}
+    .layout{display:grid;grid-template-columns:1.6fr .9fr;gap:26px;max-width:1480px;margin:24px auto;padding:0 22px 40px}
+    .portal,.panel{background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
+    .portal{overflow:hidden}.hero{padding:20px 28px 18px;background:linear-gradient(180deg,#f5f8fd,#edf4fb);border-bottom:1px solid var(--border)}
+    .hero-header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}.hero-title{font-size:28px;font-weight:800}.hero-meta{font-size:13px;color:#55728d}.status-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.chip{padding:7px 10px;border-radius:999px;background:#e7eef8;color:#163857;font-weight:700;font-size:12px}
+    .content{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;padding:22px 28px 28px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px}.section-label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#597694;font-weight:700;margin-bottom:12px}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;font-weight:700;color:#465d78}.field input, .field select{padding:10px 12px;border:1px solid #cfdbe7;border-radius:8px;background:#f9fbff;font:inherit}
+    .info-grid{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:12px}.metric{padding:12px;border-radius:12px;background:#f4f8fb;border:1px solid #dfeaf5}.metric strong{display:block;font-size:26px;margin-top:8px}.list{list-style:none;padding:0;margin:10px 0 0}.list li{padding:8px 0;border-bottom:1px solid #edf2f7;color:#3c5d7d}
+    .panel{padding:18px}.panel h3{margin:0 0 10px;font-size:18px}.panel .stack{display:flex;flex-direction:column;gap:14px}.toggle-row{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);background:#f9fbff;border-radius:10px;padding:10px 12px}
+    .toggle-row input{width:18px;height:18px}.action{background:linear-gradient(135deg,#0d2d4f,#1d4677);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer}.action.secondary{background:linear-gradient(135deg,#b9770e,#dba94a);color:#fff}.action.danger{background:linear-gradient(135deg,#a21f1f,#d43333)}.action.soft{background:#edf4fb;color:#103762;border:1px solid #cfe0ef}.row{display:flex;gap:10px;flex-wrap:wrap}.mini{font-size:12px;color:#55728d}.result{margin-top:10px;padding:10px 12px;border-radius:8px;background:#eefaf4;color:#0f5f38;border:1px solid #d3f1de;font-size:13px;display:none}.result.show{display:block}
+    @media (max-width: 980px){.layout{grid-template-columns:1fr}.content{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="seal">⚖</div>
+      <div>
+        <div>e-Verify Legal Metrology</div>
+        <div class="sub">Government Staging Test Interface</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="rolechip" id="active-role">Guest</div>
+      <div class="rolechip" id="user-label">Not signed in</div>
+      <button class="auth-btn" id="logout-btn" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="portal">
+      <div class="hero">
+        <div class="hero-header">
+          <div>
+            <div class="hero-title">Field Verification Portal</div>
+            <div class="hero-meta">Public inspection record • Government verification workflow</div>
+          </div>
+          <div class="chip" id="live-status">Online</div>
+        </div>
+        <div class="status-strip">
+          <div class="chip">Inspection Window: Active</div>
+          <div class="chip">Queue: Ready</div>
+          <div class="chip">Target Shop ID: SHP-1842</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="section-label">Inspection Details</div>
+          <div class="field-grid">
+            <div class="field"><label>Shop Name</label><input value="Sree Balaji Traders" /></div>
+            <div class="field"><label>Inspector</label><input id="inspector-name" value="Field Officer" /></div>
+            <div class="field"><label>Instrument Serial</label><input value="LM-SCL-00125" /></div>
+            <div class="field"><label>Category</label><input value="Weighing Scale" /></div>
+            <div class="field"><label>Latitude</label><input id="lat-input" value="13.0827" /></div>
+            <div class="field"><label>Longitude</label><input id="lon-input" value="80.2707" /></div>
+          </div>
+          <div class="row" style="margin-top:16px">
+            <button class="action soft" type="button" id="gps-on-site">On-Site (0m Delta)</button>
+            <button class="action soft" type="button" id="gps-boundary">Near Boundary (180m Delta)</button>
+            <button class="action soft" type="button" id="gps-out">Out of Bounds (350m Delta)</button>
+          </div>
+          <div class="row" style="margin-top:16px">
+            <button class="action" type="button" id="verify-token-btn">Verify QR Token</button>
+            <button class="action secondary" type="button" id="generate-pdf-btn">Generate Certificate</button>
+          </div>
+          <div id="qr-result" class="result"></div>
+        </div>
+
+        <div class="card">
+          <div class="section-label">Compliance Snapshot</div>
+          <div class="info-grid">
+            <div class="metric"><span class="mini">Geo Status</span><strong id="geo-status">Ready</strong></div>
+            <div class="metric"><span class="mini">Offline Queue</span><strong id="queue-count">0</strong></div>
+            <div class="metric"><span class="mini">QR Signature</span><strong id="qr-status">Idle</strong></div>
+            <div class="metric"><span class="mini">PDF Status</span><strong id="pdf-status">Idle</strong></div>
+          </div>
+          <ul class="list">
+            <li>Geo-fence standard: 200m perimeter allowance</li>
+            <li>HMAC verification: SHA-256 code signed with HMAC key</li>
+            <li>Certificate stream: in-memory PDF to iframe</li>
+            <li>Offline sync: IndexedDB queue with reconnect flush</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <h3>Test Execution Panel</h3>
+      <div class="stack">
+        <div class="toggle-row">
+          <span>Enable Simulated GPS</span>
+          <input id="gps-toggle" type="checkbox" />
+        </div>
+        <div class="toggle-row">
+          <span>Network Status</span>
+          <label style="display:flex;align-items:center;gap:8px"><input id="network-toggle" type="checkbox" checked /> <span id="network-label">Online</span></label>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <div class="section-label">Identity Switcher</div>
+          <div class="row">
+            <button class="action soft" type="button" data-identity="FIELD_OFFICER">Login as Field Officer</button>
+            <button class="action soft" type="button" data-identity="CONSUMER">Login as Public Consumer</button>
+            <button class="action soft" type="button" data-identity="ADMIN">Login as Department Admin</button>
+          </div>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <div class="section-label">QR & HMAC Test Suite</div>
+          <select id="qr-token-select" style="width:100%;padding:10px;border:1px solid #cfdbe7;border-radius:8px;margin-bottom:10px">
+            <option value="">Choose test token</option>
+          </select>
+          <div class="row">
+            <button class="action" type="button" id="inject-token-btn">Inject Test Token</button>
+            <button class="action danger" type="button" id="tamper-token-btn">Tamper Payload</button>
+          </div>
+          <div id="qr-token-result" class="result"></div>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <div class="section-label">Offline Sync Engine</div>
+          <div class="mini">Queued Records: <span id="queued-records">0</span></div>
+          <div class="row" style="margin-top:10px">
+            <button class="action soft" type="button" id="queue-sample-btn">Queue Sample Record</button>
+            <button class="action" type="button" id="sync-now-btn">Sync Now</button>
+          </div>
+        </div>
+
+        <div class="card" style="padding:12px">
+          <div class="section-label">Demo Console</div>
+          <button class="action soft" type="button" id="seed-btn">Seed Test Data</button>
+          <div id="seed-result" class="result"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    const stagingTokenStore = {
+      valid: '',
+      tampered: '',
+      auth: null,
+      selected: null
+    };
+
+    const targetShop = { lat: 13.0827, lon: 80.2707 };
+
+    function setIdentity(role) {
+      if (role === 'FIELD_OFFICER') {
+        stagingTokenStore.auth = {
+          sub: 'officer@example.com',
+          role: 'FIELD_OFFICER',
+          officer_id: 'demo-officer-1',
+          access_token: 'staging-officer-demo-token'
+        };
+      } else if (role === 'CONSUMER') {
+        stagingTokenStore.auth = {
+          sub: 'consumer@example.com',
+          role: 'CONSUMER',
+          officer_id: null,
+          access_token: 'staging-consumer-demo-token'
+        };
+      } else {
+        stagingTokenStore.auth = {
+          sub: 'admin@example.com',
+          role: 'ADMIN',
+          officer_id: 'demo-admin-1',
+          access_token: 'staging-admin-demo-token'
+        };
+      }
+      localStorage.setItem('lm_token', stagingTokenStore.auth.access_token);
+      localStorage.setItem('lm_user', JSON.stringify({ name: role === 'FIELD_OFFICER' ? 'Demo Field Officer' : role === 'CONSUMER' ? 'Demo Consumer' : 'Demo Admin', email: stagingTokenStore.auth.sub, role: stagingTokenStore.auth.role, auth_role: role }));
+      renderIdentity();
+      showToast('Identity switched', `Active session: ${role}`, 'campaign');
+    }
+
+    function renderIdentity() {
+      const user = JSON.parse(localStorage.getItem('lm_user') || 'null');
+      const role = user?.auth_role || user?.role || 'Guest';
+      const label = user?.name || 'Not signed in';
+      document.getElementById('active-role').textContent = role;
+      document.getElementById('user-label').textContent = label;
+      document.getElementById('logout-btn').style.display = user ? 'inline-flex' : 'none';
+    }
+
+    function showToast(title, msg, kind) {
+      const result = document.getElementById('qr-result');
+      result.textContent = `${title}: ${msg}`;
+      result.classList.add('show');
+      result.style.background = kind === 'campaign' ? '#edf4fb' : '#eefaf4';
+      result.style.color = '#103762';
+    }
+
+    function setGeoPreset(mode) {
+      const toggle = document.getElementById('gps-toggle');
+      if (!toggle.checked) toggle.checked = true;
+      if (mode === 'onsite') {
+        document.getElementById('lat-input').value = String(targetShop.lat);
+        document.getElementById('lon-input').value = String(targetShop.lon);
+      } else if (mode === 'boundary') {
+        const lat = targetShop.lat + 0.0015; // ~180m fan-out
+        const lon = targetShop.lon + 0.0020;
+        document.getElementById('lat-input').value = String(lat);
+        document.getElementById('lon-input').value = String(lon);
+      } else {
+        document.getElementById('lat-input').value = String(targetShop.lat + 0.0032);
+        document.getElementById('lon-input').value = String(targetShop.lon + 0.0040);
+      }
+      document.getElementById('geo-status').textContent = mode === 'out' ? 'Out of bounds' : mode === 'boundary' ? 'Near boundary' : 'On-site';
+      window.lmSandboxGps = { latitude: Number(document.getElementById('lat-input').value), longitude: Number(document.getElementById('lon-input').value) };
+    }
+
+    async function loadQrTokens() {
+      try {
+        const data = await api('/v1/dev/sample-token');
+        stagingTokenStore.valid = data.valid_token;
+        stagingTokenStore.tampered = data.tampered_token;
+        const select = document.getElementById('qr-token-select');
+        select.innerHTML = '<option value="">Choose test token</option><option value="valid">Valid HMAC token</option><option value="tampered">Tampered token</option>';
+      } catch (e) {
+        document.getElementById('qr-token-result').textContent = 'QR token endpoint unavailable: ' + e.message;
+      }
+    }
+
+    async function verifyCurrentQrToken() {
+      const select = document.getElementById('qr-token-select');
+      const chosen = select.value === 'tampered' ? stagingTokenStore.tampered : stagingTokenStore.valid;
+      if (!chosen) {
+        document.getElementById('qr-token-result').textContent = 'Choose a token first.';
+        return;
+      }
+      try {
+        const result = await api('/certificates/verify-token?token=' + encodeURIComponent(chosen));
+        document.getElementById('qr-status').textContent = 'Verified';
+        document.getElementById('qr-token-result').textContent = 'Token verified: ' + result.instrument_serial;
+      } catch (e) {
+        document.getElementById('qr-status').textContent = 'Tampered';
+        document.getElementById('qr-token-result').textContent = e.message || 'Verification failed';
+      }
+    }
+
+    function tamperCurrentToken() {
+      const select = document.getElementById('qr-token-select');
+      const current = select.value === 'tampered' ? stagingTokenStore.valid : stagingTokenStore.tampered;
+      if (!current) return;
+      select.value = 'tampered';
+      document.getElementById('qr-token-result').textContent = 'Tampered HMAC payload activated for validation testing.';
+    }
+
+    async function queueSampleRecord() {
+      const queue = JSON.parse(localStorage.getItem('lm_inspection_queue') || '[]');
+      queue.push({ local_id: 'sample-' + Date.now(), instrument_serial: 'LM-SCL-00125', officer_lat: Number(document.getElementById('lat-input').value), officer_lon: Number(document.getElementById('lon-input').value), shop_lat: targetShop.lat, shop_lon: targetShop.lon, status: 'queued', inspected_at: new Date().toISOString() });
+      localStorage.setItem('lm_inspection_queue', JSON.stringify(queue));
+      document.getElementById('queued-records').textContent = String(queue.length);
+      document.getElementById('queue-count').textContent = String(queue.length);
+    }
+
+    async function syncQueuedRecords() {
+      const queue = JSON.parse(localStorage.getItem('lm_inspection_queue') || '[]');
+      if (!queue.length) {
+        document.getElementById('qr-token-result').textContent = 'No queued records to sync.';
+        return;
+      }
+      try {
+        const result = await api('/inspections/sync-batch', { method: 'POST', body: { records: queue } });
+        const remaining = queue.filter(item => !(result.synced_ids || []).includes(item.local_id));
+        localStorage.setItem('lm_inspection_queue', JSON.stringify(remaining));
+        document.getElementById('queued-records').textContent = String(remaining.length);
+        document.getElementById('queue-count').textContent = String(remaining.length);
+        document.getElementById('qr-token-result').textContent = 'Synced: ' + (result.synced_count || 0) + ' records';
+      } catch (e) {
+        document.getElementById('qr-token-result').textContent = 'Sync error: ' + e.message;
+      }
+    }
+
+    async function seedSandboxData() {
+      try {
+        const token = localStorage.getItem('lm_token');
+        if (!token) throw new Error('Login required before seeding.');
+        const result = await api('/v1/dev/seed', { method: 'POST' });
+        document.getElementById('seed-result').textContent = JSON.stringify(result);
+        document.getElementById('seed-result').classList.add('show');
+      } catch (e) {
+        document.getElementById('seed-result').textContent = e.message;
+        document.getElementById('seed-result').classList.add('show');
+      }
+    }
+
+    async function generatePdf() {
+      try {
+        const token = localStorage.getItem('lm_token');
+        if (!token) throw new Error('Login required to generate the inspection PDF.');
+        const response = await fetch('http://127.0.0.1:8000/api/v1/staging/certificate.pdf', { headers: { Authorization: 'Bearer ' + token } });
+        if (!response.ok) throw new Error('Certificate stream unavailable');
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.width = '100%';
+        iframe.style.height = '700px';
+        iframe.style.border = '0';
+        iframe.style.marginTop = '14px';
+        document.getElementById('qr-result').textContent = 'PDF streamed in memory from backend.';
+        document.getElementById('qr-result').classList.add('show');
+        const existing = document.querySelector('iframe[data-stage-pdf]');
+        if (existing) existing.remove();
+        iframe.setAttribute('data-stage-pdf', 'true');
+        document.body.appendChild(iframe);
+        document.getElementById('pdf-status').textContent = 'Ready';
+      } catch (e) {
+        document.getElementById('qr-result').textContent = e.message;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderIdentity();
+      loadQrTokens();
+      document.getElementById('logout-btn').addEventListener('click', () => { localStorage.removeItem('lm_token'); localStorage.removeItem('lm_user'); renderIdentity(); });
+      document.querySelectorAll('[data-identity]').forEach(btn => btn.addEventListener('click', () => setIdentity(btn.dataset.identity)));
+      document.getElementById('gps-on-site').addEventListener('click', () => setGeoPreset('onsite'));
+      document.getElementById('gps-boundary').addEventListener('click', () => setGeoPreset('boundary'));
+      document.getElementById('gps-out').addEventListener('click', () => setGeoPreset('out'));
+      document.getElementById('gps-toggle').addEventListener('change', e => { window.lmSandboxGps = e.target.checked ? { latitude: Number(document.getElementById('lat-input').value), longitude: Number(document.getElementById('lon-input').value) } : null; document.getElementById('geo-status').textContent = e.target.checked ? 'Simulated' : 'Ready'; });
+      document.getElementById('inject-token-btn').addEventListener('click', verifyCurrentQrToken);
+      document.getElementById('tamper-token-btn').addEventListener('click', tamperCurrentToken);
+      document.getElementById('queue-sample-btn').addEventListener('click', queueSampleRecord);
+      document.getElementById('sync-now-btn').addEventListener('click', syncQueuedRecords);
+      document.getElementById('seed-btn').addEventListener('click', seedSandboxData);
+      document.getElementById('generate-pdf-btn').addEventListener('click', generatePdf);
+      document.getElementById('network-toggle').addEventListener('change', e => {
+        const on = e.target.checked;
+        document.getElementById('network-label').textContent = on ? 'Online' : 'Offline';
+        document.getElementById('live-status').textContent = on ? 'Online' : 'Offline';
+        window.lmSandboxOffline = !on;
+        if (on) syncQueuedRecords();
+      });
+      document.getElementById('queued-records').textContent = localStorage.getItem('lm_inspection_queue') ? JSON.parse(localStorage.getItem('lm_inspection_queue')).length : '0';
+    });
+  </script>
+</body>
+</html>
